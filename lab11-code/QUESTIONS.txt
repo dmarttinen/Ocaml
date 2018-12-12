@@ -1,0 +1,293 @@
+                           __________________
+
+                            LAB 11 QUESTIONS
+                           __________________
+
+
+- Name: Dale Marttinen
+- NetID: mart2439
+Answer the questions below according to the lab specification. Write
+your answers directly in this text file and submit it to complete the
+lab.
+
+
+Files `lex_parse_eval.ml' and `lpe_main.ml'
+===========================================
+
+  This lab deals with a lexer, parser, evaluator system for a small
+  language that includes arithmetic, `let/in' expressions, and
+  `if/then/else' expressions. `lex_parse_eval.ml' is primarily
+  responsible for this and is divided into 4 sections that handle a
+  simple arithmetic language with some more programmatic elements. The 4
+  sections are:
+  1. Lexer: which converts a character string into a list of tokens.
+  2. Parser: which converts a list of tokens into an expression tree,
+     often referred to as a Parse Tree or Abstract Syntax Tree (AST).
+  3. Evaluator: which analyzes the expression tree and computes a
+     numeric result.
+  4. To-string functions: which are used to convert token lists and
+     parse trees to strings that can be printed.
+
+  The functions in `lex_parse_eval.ml' are used in the file
+  `lpe_main.ml' which takes an expression from the command line and
+  performs lexing, parsing, and evaluation on it.  Here are some
+  examples though the examples for `if/then/else' won't work until the
+  lab is completed.
+  ,----
+  | > ocamlc lex_parse_eval.ml lpe_main.ml
+  |
+  | > ./a.out '1'
+  | Tokens:
+  | [Int(1)]
+  |
+  | Parse Tree:
+  | IConst(1)
+  |
+  | Result:
+  | Int(1)
+  |
+  | > ./a.out 'true'
+  | Tokens:
+  | [Bool(true)]
+  |
+  | Parse Tree:
+  | BConst(true)
+  |
+  | Result:
+  | Bool(true)
+  |
+  | > ./a.out '1+2'
+  | Tokens:
+  | [Int(1); Plus; Int(2)]
+  |
+  | Parse Tree:
+  | Add
+  |   IConst(1)
+  |   IConst(2)
+  |
+  | Result:
+  | Int(3)
+  |
+  | > ./a.out '1+2*3'
+  | Tokens:
+  | [Int(1); Plus; Int(2); Times; Int(3)]
+  |
+  | Parse Tree:
+  | Add
+  |   IConst(1)
+  |   Mul
+  |     IConst(2)
+  |     IConst(3)
+  |
+  | Result:
+  | Int(7)
+  |
+  | > ./a.out 'if false then 1+2*3 else 4*5'          # WON'T WORK UNTIL LAB IS COMPLETED
+  | Tokens:
+  | [If; Bool(false); Then; Int(1); Plus; Int(2); Times; Int(3); Else ; Int(4);
+  |  Times; Int(5)]
+  |
+  | Parse Tree:
+  | Cond
+  |   .if_expr:
+  |     BConst(false)
+  |   .then_expr:
+  |     Mul
+  |       IConst(4)
+  |       IConst(5)
+  |   .else_expr:
+  |     Add
+  |       IConst(1)
+  |       Mul
+  |         IConst(2)
+  |         IConst(3)
+  |
+  | Result:
+  | Int(20)
+  |
+  | > ./a.out 'let x=5 in let y=2 in x*y'
+  | Tokens:
+  | [Let; Ident(x); Equal; Int(5); In; Let; Ident(y); Equal; Int(2); In;
+  |  Ident(x); Times; Ident(y)]
+  |
+  | Parse Tree:
+  | Letin( x )
+  |   .var_expr:
+  |     IConst(5)
+  |   .in_expr:
+  |     Letin( y )
+  |       .var_expr:
+  |         IConst(2)
+  |       .in_expr:
+  |         Mul
+  |           Varname(x)
+  |           Varname(y)
+  |
+  | Result:
+  | Int(10)
+  `----
+
+
+PROBLEM 1: Lexer and Parser
+===========================
+
+(A)
+~~~
+
+  In addition to arithmetic, the lexer/parser/evaluator understands two
+  additional features
+  1. `if/then/else' constructs for conditional execution
+  2. `let/in' expressions as `let x=1+2 in x*7' for binding names to
+     values
+
+  Examine the first section of `lex_parse_eval.ml' which contains the
+  lexer. Explain what tokens exist for the keywords like `let' and `if'
+  and how the lexer creates these tokens versus variable name `Ident'
+  tokens.
+  The lexer checks if the input string is equal to one of the keywords. If so,
+  it creates the appropriate token. If not, then it creates the generic string token.
+
+(B)
+~~~
+
+  Examine the second section of `lex_parse_eval.ml' which contains the
+  parser. Examine the `expr' type which represents the tree-like
+  structure of parsed expressions.  Describe the new entries in this
+  type that correspond to `if/then/else' and `let/in'
+  constructs. Describe their parts and whether expression trees will
+  always be binary trees.
+  Cond and Letin are the two new types.
+  Letin contains  a name, and 2 expressions.
+  Cond contains three expressions.
+  Since letin and cond have 3 elements, the tree could be a tertiary search tree.
+
+(C)
+~~~
+
+  The parser is somewhat more complex then previous versions but has
+  many of the same features in that it is comprised of a series of
+  mutually recursive functions.  However some cosmetic differences are
+  immediately apparent.
+  - The names of the parsing elements do not mention their precedence
+    but instead name the kind of element they handle such as `parse_add'
+    and `parse_cond'. Some of these such as `parse_add' handle more than
+    `Add' tokens but this should be easy to interpret.
+  - The parsing functions, starting with `parse_expr' are shown in
+    source code "top-down" with lower-precedence `parse_add' coming
+    before higher-precedence `parse_mul'.
+
+  Examine the parsing functions carefully and answer the following
+  questions.
+  1. Is the parsing of `let/in' and `if/then/else' expressions higher or
+     lower precedence than adding and multiplying?
+     Higher
+
+  2. Functions like `parse_add' make recursive calls to themselves to
+     try to parse more additions.  Is this what `parse_letin' and
+     `parse_cond' do? Why or why not?
+     No. They call back to parse_expr since they take in more complicated expressions.
+
+  3. Functions like `parse_add' first attempt to call higher-precedence
+     parsing functions like `parse_mul'.  They then use the results in
+     an addition.  Is the same done by `parse_letin' and `parse_cond'?
+     Why or why not?
+     No. They need to evaulate the tokens to check if they're keywords before they can pass on the token.
+
+
+PROBLEM 2: Evaluator
+====================
+
+(A)
+~~~
+
+  Examine the third section of `lex_parse_eval.ml' which contains the
+  Evaluator.  This portion defines types and functions relevant to
+  walking through an expression tree generated by the parser to evaluate
+  an answer.
+
+  The first few lines of the evaluator lay out a type `varval' for
+  results and create a `varmap_t' type to map string names. Answer the
+  following questions about this section.
+  1. Describe the kinds of value that can result for evaluation or be
+     let-bound via `let/in' bindings.
+     int and bool
+
+  2. How is OCaml's standard library used to easily derive functions for
+     adding and looking up variable bindings in the `varmap_t'? What
+     standard functor is used?
+     Map.make(string) creates a map of strings to the varname values
+
+  3. Will the variable maps be mutable or immutable?
+    Immutable
+
+(B)
+~~~
+
+  Examine the `eval_expr' function which is where most of the work of
+  the evaluator is performed. Answer the following questions.
+
+  1. What two arguments does `eval_expr' take? What types are they as
+     inferred by looking through the rest of the code?
+     the varmap, and an expresion tree. varmap is an option map of type varmap_t
+     the tree if of type expression
+  2. What action is taken when a `Varname' expression is found and what
+     error can result?
+     a find_opt is run to get the option value, if there isn't any, a no variable is bound error is given
+  3. Inspect how the different arithmetic operators are
+     handled. Describe how the common task of evaluating the left/right
+     child expressions is handled while still performing appropriate
+     arithmetic operations.
+     The evaluator checks for the 4 common arithmetic tokens, and then binds the left and right expressions.
+     Then is matches the initial token to get the correct arithmetic operator and applies that to the left and right
+  4. Analyze the `Letin' case within `eval_expr'. Describe how a new
+     binding is created in a `let/in' expression.
+     Varmap.add is called to create a new varname. Then eval_expr is called on the resulting map
+
+(C)
+~~~
+
+  The code for the `Cond' case is not complete so `if/then/else'
+  expressions will not evaluate yet.  Fill in the gaps marked `EDIT ME'
+  to complete this code.
+  - Evaluate the `c.if_expr' to determine if the test is true or false
+  - When b is true, evaluate c.then_expr
+  - When b is false, evaluate c.else_expr
+
+  Paste your code below as your solution.
+  | Cond(c) -> begin                                       (* eval a condition *)
+      let test = Bool false eval_expr varmap c.if_expr in               (* evaluate the test in c.if_expr *)
+      match test with
+      | Bool b ->                                          (* ensure result of <expr> was a true/false value  *)
+         if b = true then eval_expr varmap c.then_expr
+         else eval_expr varmap c.else_expr
+      | _ ->                                               (* error: 'if <expr>' did not give a true/false *)
+         let msg = sprintf "Expected Bool for if <expr>, found '%s'" (data_string test) in
+         raise (EvalError{msg})
+    end
+
+Optional Extras
+===============
+
+  Currently the lexer/parser/evaluator does not handle numeric
+  comparisons to produce boolean results such as
+  ,----
+  | 5 < 2 -> Bool false
+  | if 1+2 > 0 then 8 else 4  -> Int 8
+  `----
+  This will be a required part of the final assignment interpreter so it
+  would be an excellent exercise to extend the system to handle these
+  new expression types.
+
+  - Extend the lexer to include < and >. The = sign is already part of
+    the lexer.
+  - Extend the expression type to include comparison expressions for
+    Less, Greater, Equal with constituent left/right expressions (like
+    arithmetic).
+  - Extend the parser functions with a new function to parse
+    comparisons. This should occur at a lower precedence than
+    arithmetic.
+  - Extend the evaluator to include evaluation cases for
+    comparisons. These should check that their left/right expressions
+    are integers, do the appropriate comparison on the numbers, and
+    return a Bool.  You may wish to model them after the arithmetic
+    evaluation code.

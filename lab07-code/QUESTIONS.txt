@@ -1,0 +1,328 @@
+                           __________________
+
+                            LAB 07 QUESTIONS
+                           __________________
+
+
+- Name: Dale Marttinen
+- NetID: mart2439
+
+Answer the questions below according to the lab specification. Write
+your answers directly in this text file and submit it to complete the
+lab.
+
+
+PROBLEM 1: Higher-order Practice and Currying
+=============================================
+
+  The file `nested_lists.ml' contains two nested lists,
+  - strll : string list list
+  - intll : int list list
+  Several functions are described in this file that operate on such
+  nested lists.  Fill in their definitions. All of them involve
+  application of appropriate higher-order functions on lists.  Some of
+  them may also benefit from partial application of curried functions.
+  You may freely alter prototypes such as adding/removing arguments so
+  long as the resulting functions work as indicated in the examples.
+
+  ,----
+  | (* nested_lists.ml: Define some functions on nested lists (e.g. int
+  |    list list and string list list) using higher-order functions. *)
+  |
+  | open Printf;;
+  |
+  | (* sample string list list *)
+  | let strll = [
+  |     ["Korra";"Mako";"Bolin";"Asami";];
+  |     ["Tenzin";"Pema"];
+  |     ["Meelo";"Jinora";"Iki"];
+  |     ["Amon";"Kuvira";"Zaheer"];
+  | ];;
+  |
+  | (* sample int list list *)
+  | let intll = [
+  |     [1;2;3];
+  |     [4;5;6];
+  |     [7;8;9;10];
+  |     [11];
+  | ];;
+  |
+  | (* val flatten : 'a list list -> 'a list
+  |
+  |    Converts a list of lists to a single "flat" list. Each list is
+  |    appended onto the last.  Since this function is polymorphic, no
+  |    special versions are needed for different types of list.  Makes use
+  |    of List.fold_left. This function is equivalent to the standard
+  |    List.flatten function built into ocaml.
+  |
+  |    # flatten intll;;
+  |    - : int list = [1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11]
+  |    # flatten strll;;
+  |    - : string list =
+  |    ["Korra"; "Mako"; "Bolin"; "Asami"; "Tenzin"; "Pema"; "Meelo"; "Jinora";
+  |     "Iki"; "Amon"; "Kuvira"; "Zaheer"]
+  | *)
+  | let flatten list_list =
+  |   
+  |   []
+  | ;;
+  |
+  | (* val totlen : 'a list list -> int
+  |
+  |    Calculates the total length of all combined lists using fold_left.
+  |    Does not use flatten but does use List.length.
+  |
+  |    # totlen intll;;
+  |    - : int = 11
+  |    # totlen strll;;
+  |    - : int = 12
+  | *)
+  | let totlen list_list =
+  |   (* YOUR CODE HERE *)
+  |   -1
+  | ;;
+  |
+  |
+  | (* val print_list_list : ('a -> unit) -> 'a list list -> unit
+  |
+  |    Print all lists in a list. argument print_elem is a function that
+  |    prints the a single element of any list.  Each list is printed on
+  |    its own line starting with an open square brace [ and ending with a
+  |    clsoe square brace ].  See specific output for print_str_list_list
+  |    and print int_list_list below which both use this function.
+  | *)
+  | let print_list_list print_elem listlist =
+  |   (* YOUR CODE HERE *)
+  |   ()
+  | ;;
+  |
+  | (* val print_str_list_list : string list list -> unit
+  |
+  |    Print all string lists in a list. Each string is printed preceded
+  |    by a space. Otherwise the conventions of print_list_list are used.
+  |
+  |    # print_str_list_list strll;;
+  |    [ Korra Mako Bolin Asami]
+  |    [ Tenzin Pema]
+  |    [ Meelo Jinora Iki]
+  |    [ Amon Kuvira Zaheer]
+  |    - : unit = ()
+  | *)
+  | let print_str_list_list =
+  |   (* YOUR CODE HERE *)
+  |   ()
+  | ;;
+  |
+  | (* val print_int_list_list : int list list -> unit
+  |
+  |    Print all int lists in a list. Each integer is printed preceded by
+  |    a space. Otherwise the conventions of print_list_list are used.
+  |
+  |    # print_int_list_list intll;;
+  |    [ 1 2 3]
+  |    [ 4 5 6]
+  |    [ 7 8 9 10]
+  |    [ 11]
+  |    - : unit = ()
+  |  *)
+  | let print_int_list_list =
+  |   (* YOUR CODE HERE *)
+  |   ()
+  | ;;
+  `----
+
+
+PROBLEM 2: Curry Trouble
+========================
+
+  The provided file `curry_trouble.ml' is intended to compile and run as
+  follows.
+  ,----
+  | > ocamlc curry_trouble.ml
+  | > ./a.out
+  | usage: ./a.out base start stop
+  |
+  | > ./a.out 2 1 10
+  | 2^1 is 2
+  | 2^2 is 4
+  | 2^3 is 8
+  | 2^4 is 16
+  | 2^5 is 32
+  | 2^6 is 64
+  | 2^7 is 128
+  | 2^8 is 256
+  | 2^9 is 512
+  | 2^10 is 1024
+  |
+  | > ./a.out 3 4 8
+  | 3^4 is 81
+  | 3^5 is 243
+  | 3^6 is 729
+  | 3^7 is 2187
+  | 3^8 is 6561
+  `----
+
+  Unfortunately, `curry_trouble.ml' currently has an error in it which
+  prevents it from being compiled.  OCaml's automatic function currying
+  makes this error somewhat more obscure than it might otherwise
+  be. This problem explores this issue to practice debugging type
+  errors.
+
+  ,----
+  | (* curry_trouble.ml: Debug the following code which has a compile time
+  |    error due to a partial application. *)
+  |
+  | open Printf;;
+  |
+  | (* raise base to given exp *)
+  | let pow base exp =
+  |   let ans = ref 1 in
+  |   for i=1 to exp do
+  |     ans := !ans * base;
+  |   done;
+  |   !ans
+  | ;;
+  |
+  | (* print successive powers *)
+  | let print_powers base start stop =
+  |   for i=start to stop do
+  |     let x = pow base in
+  |     printf "%d^%d is %d\n" base i x;
+  |   done;
+  | ;;
+  |
+  | (* main function *)
+  | let _ =
+  |   if Array.length Sys.argv < 4 then
+  |     begin
+  |       printf "usage: %s base start stop\n" Sys.argv.(0);
+  |       exit 1;
+  |     end;
+  |   let base  = int_of_string Sys.argv.(1) in
+  |   let start = int_of_string Sys.argv.(2) in
+  |   let stop  = int_of_string Sys.argv.(3) in
+  |   print_powers base start stop;
+  | ;;
+  `----
+
+
+(A)
+~~~
+
+  Compile the `curry_trouble.ml' as shown above and paste the compile
+  error that results below.
+
+
+(B)
+~~~
+
+  The error message proclaims that this is a type problem. This is not
+  wrong, just misleading.
+
+  Spend some time examining the code and correct the error. Describe
+  what the true problem is and show below the line(s) which need to be
+  changed to produce a working version of `curry_trouble.ml'.
+
+
+(C)
+~~~
+
+  Describe why OCaml reports a type error for the original code on a
+  different line from where the error actually occurs. Relate your
+  discussion to curried functions and partial applications.
+
+
+(D)
+~~~
+
+  Once you have identified the problem with `curry_trouble.ml', consider
+  the equivalent Java program that is provided in `Uncurried.java'.  The
+  mistake that is made in this file is identical.  Compile it as follows
+  and show the error message given. Describe whether you feel this error
+  message is more or less indicative of the underlying problem and why.
+
+  ,----
+  | > javac Uncurried.java
+  `----
+
+
+(E)
+~~~
+
+  Describe the cost associated with OCaml's automatic currying of
+  functions.  Also describe if there is any way to avoid these problems
+  if curried functions are not needed: how would one enforce all
+  arguments be given together as a package in OCaml?
+
+
+PROBLEM 3: Objects... or Closures?
+==================================
+
+  Object-oriented programming frequently features a syntax that looks
+  looks like the following:
+  ,----
+  | My_Object my_object = new My_Object(init1,init2);
+  | my_object.some_method(param1,param2);
+  `----
+  OCaml has an object system that works similarly to this which we will
+  discuss later.  However, with the introduction of first-class
+  functions, we are already in a position to create an ad-hoc object
+  system that looks and behaves very similarly to the above
+  template. The problem explores the file `closure_objects.ml' which
+  demonstrates this concept.
+
+
+(A)
+~~~
+
+  Examine the file `closure_objects.ml' and describe
+  - What kind of "object" is defined
+  - What data is associated with instances of these objects
+  - What "methods" (operations) are supported for the data
+
+
+(B)
+~~~
+
+  Describe how to create an instance of the "objects" defined in
+  `closure_object.ml'.  What function is used, what arguments does it
+  take, and what type of thing does it return.
+
+
+(C)
+~~~
+
+  Describe the syntax used to initiate the `birthday' method. Give an
+  example from the later "main" function. What type of thing is the
+  `birthday' field of each record bound to?
+
+
+(D) OPTIONAL Enrichment
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  The `make_person' uses an interesting technique that we have not
+  discussed.  The binding starts with
+  ,----
+  | let rec this = {
+  `----
+  and proceeds to use `and' bindings as in
+  ,----
+  | and birthday_func () =
+  | ...
+  | and name_change_func name =
+  `----
+
+  Note that the name `this' is NOT special in OCaml: it was chosen to
+  match the convention of C++/Java where `this' refers to the object
+  instance associated with a running method.
+
+  To this point, we have only seen `rec' associated with recursive
+  functions.  Clearly, the `this' is neither recursive nor a function.
+  Neither are any of the functions associated with it recursive.
+
+  Make a copy of `closure_objects.ml' and experiment eliminating the
+  `rec' and defining the record and functions separately with standard
+  `let/in' syntax.  Describe your results.
+
+  Do some research on the purpose of `let rec/and' in OCaml and describe
+  its use case.

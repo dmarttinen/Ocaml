@@ -1,0 +1,315 @@
+			   __________________
+
+			    LAB 03 QUESTIONS
+			   __________________
+
+
+- Name: Dale Marttinen
+- NetID: mart2439
+
+Answer the questions below according to the lab specification. Write
+your answers directly in this text file and submit it to complete the
+lab.
+
+
+PROBLEM 1: concat_all and match/with
+====================================
+
+(A)
+~~~
+
+  Examine the code provided in `concat_all.ml'
+  ,----
+  | let rec concat_all_crap strlist =
+  |   if strlist=[] then
+  |     ""
+  |   else
+  |     let head = List.hd strlist in
+  |     let tail = List.tl strlist in
+  |     let rest = concat_all_crap tail in
+  |     head ^ " " ^ rest
+  | ;;  
+  | 
+  | let rec concat_all_good strlist =
+  |   if strlist=[] then
+  |     ""
+  |   else
+  |     let head = List.hd strlist in
+  |     let tail = List.tl strlist in
+  |     if tail=[] then
+  |       head
+  |     else
+  |       let rest = concat_all_good tail in
+  |       head ^ " " ^ rest
+  | ;;
+  `----
+
+  Two functions are present which perform a similar operation but their
+  output varies subtly.
+
+  - Describe what the functions do.
+ They both take in a list of strings, and combine them into one long string buy putting a space between each element. 
+  
+  - Execute both functions on the following inputs in a REPL and paste
+    the results below.
+    - []
+    - ["Fold-em"]
+    - ["Muh";"muh"]
+    - ["P"; "p"; "p"; "poker"; "face"]
+# concat_all_crap [];;
+- : string = ""
+# concat_all_crap ["Fold-em"];;
+- : string = "Fold-em "
+# concat_all_crap ["Muh"; "muh"];;
+- : string = "Muh muh "
+# concat_all_crap ["P"; "p"; "p"; "poker"; "face"];;
+- : string = "P p p poker face "
+# concat_all_good [];;
+- : string = ""
+# concat_all_good ["Fold-em"];;
+- : string = "Fold-em"
+# concat_all_good ["Muh"; "muh"];;
+- : string = "Muh muh"
+# concat_all_good ["P"; "p"; "p"; "poker"; "face"];;
+- : string = "P p p poker face"
+	
+  - Describe the difference in return value between the two
+    functions. Pay particular attention to the ends of the strings.
+concat_all_crap adds a space after each element in the list, this is even after the last element where a space isn't needed. Unless the list is empty right from the start.
+concat_all_good adds a space only in between elements.
+	
+
+(B)
+~~~
+
+  Create a function `concat_all' which operates the same way that
+  `concat_all_good' does but uses PATTERN MATCHING via the match/with
+  construct.  Paste your code below and the results of testing it in a
+  REPL.
+let rec concat_all strlist =
+  match strlist with
+    | [] -> ""
+    | head::tail when tail = [] -> head
+    | head::tail -> head ^ " " ^ concat_all tail
+;;
+	
+# #use "concat_all.ml";;
+val concat_all_crap : string list -> string = <fun>
+val concat_all_good : string list -> string = <fun>
+val concat_all : string list -> string = <fun>
+# concat_all [];;
+- : string = ""
+# concat_all ["Fold-em"];;
+- : string = "Fold-em"
+# concat_all ["Muh"; "muh"];;
+- : string = "Muh muh"
+# concat_all ["P"; "p"; "p"; "poker"; "face"];;
+- : string = "P p p poker face"	
+  
+
+PROBLEM 2: colsum and the stack
+===============================
+
+(A)
+~~~
+
+  Analyze the code in `colsum.ml'. It contains a function called
+  `colsum_nt' which computes a certain sequence of numbers and sums the
+  sequence.
+
+  This file can be compiled and run as a program which will perform
+  `colsum_nt 10' and print some intermediate and final results. Paste
+  the lines you use to compile and run the `colsum.ml' below as well as
+  the output for the program.
+mart2439@SAFL-Limonite:/mnt/c/Users/mart2439/ocaml/lab03-code$ ocamlc -o colsum colsum.ml
+mart2439@SAFL-Limonite:/mnt/c/Users/mart2439/ocaml/lab03-code$ ./colsum
+10
+5
+16
+8
+4
+2
+1
+sum: 46
+
+(B)
+~~~
+
+  Consider the source code for `colsum_nt'
+  ,----
+  |  1  let rec colsum_nt n =
+  |  2    Printf.printf "%d\n" n;
+  |  3    if n = 1 then
+  |  4      1
+  |  5    else
+  |  6      let next = 
+  |  7        if n mod 2 = 0 
+  |  8        then n/2
+  |  9        else 3*n+1
+  | 10      in
+  | 11      let rest = colsum_nt next in
+  | 12      n + rest
+  | 13  ;;
+  | 14  
+  | 15  let sum = colsum_nt 10 in
+  | 16  Printf.printf "sum: %d\n" sum;
+  | 17  ;;
+  `----
+
+  The `colsum_nt' function is NOT tail recursive. This means it builds a
+  sequence of activation records as it recurses at line 11 until it
+  reaches the base case at line 4. The initial call is `colsum_nt 10'
+  and the first few frames of this sequence of activation records are
+  below. Add on to this table to show all Activation Records present
+  when line 4 is first reached in `colsum_nt'.
+
+  ----------------------
+   FRAME      SYM   VAL 
+  ----------------------
+   init       ...   ..  
+   line:15    sum   ??  
+  ----------------------
+   colsum_nt  n     10  
+   line:11    next  5   
+              rest  ??  
+  ----------------------
+   colsum_nt  n     5   
+   line:11    next  16  
+              rest  ??  
+  ----------------------
+   colsum_nt  n     16   
+   line:11    next  8  
+              rest  ??  
+  ----------------------
+   colsum_nt  n     8  
+   line:11    next  4  
+              rest  ??  
+  ----------------------
+   colsum_nt  n     4  
+   line:11    next  2  
+              rest  ??  
+  ----------------------
+   colsum_nt  n     2  
+   line:11    next  1  
+              rest  ??  
+  ----------------------
+   colsum_nt  n     1  
+   line:4  
+  ----------------------  
+
+  (C)
+~~~
+
+  Programmers new to the idea of tail recursion may at times think
+  trivial changes code re-arrangements such as the one below will make a
+  function tail recursive. Notice in the `colsum_alt' version below how
+  line 11 now has both the addition and recursive call.
+
+  ,----
+  |  1 let rec colsum_alt n =
+  |  2   Printf.printf "%d\n" n;
+  |  3   if n = 1 then
+  |  4     1
+  |  5   else
+  |  6     let next = 
+  |  7       if n mod 2 = 0 
+  |  8       then n/2
+  |  9       else 3*n+1
+  | 10     in
+  | 11     n + (colsum_alt next)       (* changed line *)
+  | 12 ;;
+  `----
+
+  Explain why this version is still NOT tail recursive and in fact will
+  execute identically to the previous `colsum_nt' version.
+colsum_alt still has saves the addition on the stack until after the recursive call returns. 
+
+(D)
+~~~
+
+  Write a tail recursive version of `colsum' called `colsum_tr'. A good
+  strategy for this is to use an internal helper function which takes
+  some additional parameters beyond single value.  Paste your code below
+  and show that it works identically to `colsum_nt'.
+  
+let rec colsum_tr n =
+  let rec helper num total = (*start the helepr funtion. This keeps a running total, as well as the input number*)
+    Printf.printf "%d\n" num;
+    if num = 1 then          (*base case. *)
+      total                  (*This is different that colsum_nt because the num is added before getting here*)
+    else                     (*the else clause is the same. It just has a new vairable*)
+      let next =
+        if num mod 2 = 0
+        then num/2
+        else 3*num+1
+      in
+      helper next (next+total) (*call to the helper function. This does the recursion, and the addition in one step so that the function doesn't have to go back up the stack*)
+  in
+  helper n n (*call helper. The total starts with n becuase the next value is computed befoere the first addition can be performed*)
+;;
+
+let sum = colsum_tr 15 in
+Printf.printf "sum: %d\n" sum;
+;;
+
+mart2439@SAFL-Limonite:/mnt/c/Users/mart2439/ocaml/lab03-code$ ./colsum
+15                                                                     
+46                                                                     
+23                                                                     
+70                                                                     
+35                                                                     
+106                                                                    
+53                                                                     
+160                                                                    
+80                                                                     
+40                                                                     
+20                                                                     
+10                                                                     
+5                                                                      
+16                                                                     
+8                                                                      
+4                                                                      
+2                                                                      
+1                                                                      
+sum: 694                                                               
+15                                                                     
+46                                                                     
+23                                                                     
+70                                                                     
+35                                                                     
+106                                                                    
+53                                                                     
+160                                                                    
+80                                                                     
+40                                                                     
+20                                                                     
+10                                                                     
+5                                                                      
+16                                                                     
+8                                                                      
+4                                                                      
+2                                                                      
+1                                                                      
+sum: 694      
+
+mart2439@SAFL-Limonite:/mnt/c/Users/mart2439/ocaml/lab03-code$ ./colsum                                                                            
+10                                                                                        
+5                                                                                         
+16                                                                                        
+8                                                                                         
+4                                                                                         
+2                                                                                         
+1                                                                                         
+sum: 46                                                                                                                                                                    
+mart2439@SAFL-Limonite:/mnt/c/Users/mart2439/ocaml/lab03-code$ ocamlc -o colsum colsum.ml 
+mart2439@SAFL-Limonite:/mnt/c/Users/mart2439/ocaml/lab03-code$ ./colsum                   
+8                                                                                         
+4                                                                                         
+2                                                                                         
+1                                                                                         
+sum: 15                                                                                   
+8                                                                                         
+4                                                                                         
+2                                                                                         
+1                                                                                         
+sum: 15                                                                                   

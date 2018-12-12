@@ -1,0 +1,236 @@
+                           __________________
+
+                            LAB 13 QUESTIONS
+                           __________________
+
+
+- Name: Dale Marttinen
+- NetID: mart2439
+
+Answer the questions below according to the lab specification. Write
+your answers directly in this text file and submit it to complete the
+lab.
+
+
+PROBLEM 1: `lazy_calls.ml'
+==========================
+
+  Compile the file `lazy_calls.ml' and run it with several command line
+  parameters such as
+  ,----
+  | > ocamlc lazy_calls.ml
+  | > ./a.out 20
+  | ...
+  | > ./a.out 25
+  | ...
+  | > ./a.out 30
+  | ...
+  | > ./a.out 32
+  | ...
+  `----
+
+  The input parameter is passed to a `fib n' function so will repeatedly
+  compute the `nth' Fibonacci number. The questions below pertain to
+  timing repeated calls to these functions so pick an `n' that is large
+  enough to see timing info printed but not so large as to make repeated
+  runs tediously long.
+
+
+(A)
+~~~
+
+  Examine the timing information output for the section marked
+  ,----
+  | =====(1) either_args=====
+  `----
+  and find the corresponding block of code.
+
+  Answer the following questions.
+  1. Describe what the function `either_args' does, especially its
+     dependence on the `(flag1,flag2)' parameters.
+     either_args computes the fib of both args, and prints the values of each depending on the value of the flags.
+     It also prints the flags, and the total time to compute the fib.
+
+  2. Explain why the times printed for each invocation of `either_args'
+     is identical regardless of the flags passed in. Incorporate the
+     notion of *eager evaluation* in your answer.
+     Since Ocaml is eager, it runs the evaluation of all of the args all of the time.
+     So the time to run is the same, every single time.
+
+(B)
+~~~
+
+  Examine the output with section marked
+  ,----
+  | =====(2) either_susp, new suspension each iter=====
+  `----
+  and locate the corresponding code in `lazy_calls.ml'.
+
+  Contrast this with the first section by answering the following
+  questions.
+  1. How are `either_susp' and `either_arg' from the previous section
+     different?
+     Instead of passing in the function to be evaluated, either_susp passes in a function of a function.
+     This way instead of running the function, Ocaml just evaluates the function, until it needs to run it.
+
+  2. Why are the times for some of the calls of `either_susp' different
+     from each other?
+     With both flags false, the fib function isn't run since no value is needed.
+     When one flag is true, one of the fib functions is run since it needs the value.
+     When both flags are true, both fib calls are ran.
+
+  3. Explain why some of the times in section (1) and (2) differ and
+     some are the same.
+     When both flags are true, either_susp is computing both of the fib values, the same as either_arg does.
+
+(C)
+~~~
+
+  Examine the output with section marked
+  ,----
+  | =====(3) either_lazy, lazy expr each iteration======
+  `----
+  and locate the corresponding code in `lazy_calls.ml'.
+
+  1. How does the code associated with the `either_lazy' differ from
+     `either_susp'? What module and special syntax are used?
+     the fib calls are lazy, and then forced when they need to be evaluated in the print
+
+  2. Compare the timings from output section (2) and (3) to each other
+     and explain any similarities or differences.
+     They are the same since they are doing the same amount of work.
+     The fib calls are only computed when the flags are true.
+
+(D)
+~~~
+
+  Examine the output with section marked `====(4) either_susp, single
+  suspension before loop====' and locate the corresponding code in
+  `lazy_calls.ml'.
+
+  Contrast the code associated with (4) and the previous use of
+  suspensions in (2): how do the codes differ? Explain why their timings
+  are the same or why there are differences.
+  This code defines the suspension before hand instead of in the loop.
+  It's doing the same thing as either_susp so the times are the same.
+
+(E)
+~~~
+
+  Examine the output with section marked
+  ,----
+  | =====(5) either_lazy, new lazy expr each iter======
+  `----
+  and locate the corresponding code in `lazy_calls.ml'.
+
+  Contrast the code associated with (5) and the previous use of
+  suspensions in (3): how do the codes differ? Explain why their timings
+  are the same or why there are differences.
+  fib_lazy calculates the value by running the fib function the first time it's called.
+  subsequent calls just grab the value, since it's already evaluated. This makes repeated calls short.
+
+PROBLEM 2: Streams of Data
+==========================
+
+  Compile and run the code in `stream_demo.ml'. Examine the results
+  noting that you *must press Ctrl-c to kill the program* as it will
+  otherwise loop infinitely.
+
+
+(A)
+~~~
+
+  Analyze the first section of code associated with the heading
+  ,----
+  | =====finite stream from list=====
+  `----
+
+  Answer the following questions about the code.
+  1. Describe what data source is used as a source for the stream and
+     what library function is used to create a stateful stream from it.
+     the source is a string list. the Stream library is used to create a stream
+
+  2. What library functions are used to access elements of the stream?
+     Examine their documentation and describe what they do.
+     Stream.peak returns an option of the first element
+     Stream.count is the current number of elements in the stream
+     Stream.next returns the first element, and removes it
+
+  3. Why does the output of the program differed between the list and
+     stream from one iteration to the next?
+     Stream.next is removing the first element each time it loops through, and it's always working on the remainder
+
+
+(B)
+~~~
+
+  Examine the second section of `stream_demo.ml' with heading
+  ,----
+  | =====infinite int stream from function=====
+  `----
+
+  Answer the following questions about the code.
+  1. As in the previous problem, describe what data source is used as a
+     source for the stream and what library function is used to create a
+     stateful stream from it.
+     A function is used to create the values for the stream
+
+
+  2. What library functions are used to access elements of the stream?
+     Are they the same or different from part (A) above?
+     they are the same as the functions on the list
+
+  3. Will the stream in this case ever "run out" of data? Explain your
+     reasons why or why not?
+     No. The function can always grab a higher value int. The only end will be a hardware limitation.
+  4. Explain why this stream can produce a lot of data but requires very
+     little memory to represent.
+     The stream is only looking at the current value. It ignores everything before it.
+     The stream generates the subsequent values after looking at the current. 
+
+Optional Extras
+===============
+
+Custom implementations of `lazy' fail
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  A first instinct for most folks observing the connection between
+  Problem 1's suspensions via functions and the `lazy' keyword is to
+  attempt their own implementation of it along the following lines.  (*
+  custom_lazy.ml: optional problem exploring possible implementations of
+  lazy expressions. *)
+
+
+  type 'a lazy_expr = { (* type for lazy expressions *) expr : unit ->
+      'a; (* expression to evaluate *) mutable result : 'a option; (*
+      saved results, None if uneval'd yet *) };;
+
+  let my_lazy expr = (* create a lazy version of expr *) {expr = (fun ()
+    -> expr); result = None} ;;
+
+  let my_force lazy_expr = (* force a value out of the lazy_expr *)
+    match lazy_expr.result with
+   Some a -> a                     (* already evaluated *)
+   None ->                         (* not eval'd yet *)
+       let a = lazy_expr.expr () in (* eval *) lazy_expr.result <- Some
+       a; (* save result *) a (* return result *) ;;
+
+  Experiment with this version by adding calls to its `my_lazy' into the
+  demo in `lazy_calls.ml'.  See if it in fact creates the same effects
+  as the built-in `lazy' keyword.
+
+  When you determine that it does not, speculate as to why it fails and
+  why compiler support is required for features like `lazy'.
+
+
+Stream peek vs. has_more
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  It is natural to expect the `Stream' module to contain a function like
+  `Stream.has_more stream' which returns true when the stream has more
+  data and false otherwise. However, there is no such `has_more'
+  function present and the `peek' function which returns a None/Some is
+  used instead.  Why would it be difficult or even impossible to write a
+  general purpose `has_more' function? Consider that streams are very
+  general and in the sample code provided, data from two different
+  sources is converted to streams.

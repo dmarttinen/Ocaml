@@ -1,0 +1,332 @@
+			   __________________
+
+			    LAB 04 QUESTIONS
+			   __________________
+
+
+- Name: Dale Marttinen
+- NetID: mart2439
+
+Answer the questions below according to the lab specification. Write
+your answers directly in this text file and submit it to complete the
+lab.
+
+
+PROBLEM 1: Pairs and Association Lists
+======================================
+
+  Tuples allow multiple data of different types to be stored
+  together. OCaml allows arbitrarily large tuples but in practice one
+  works mostly with pairs (2-tuples) and triples (3-tuples).
+
+  This problem explores *Association List* to map keys to values; these
+  make extensive use of pairs (2-tuples). They are simple means of
+  implementing the idea of a "map" from keys to values. In many
+  functional programming contexts, the are implemented simply as an
+  unordered list of pairs. This gives them linear complexity for
+  operations like lookup. For small collections of key/values this is
+  reasonable but as the collection goes large, one typically switches to
+  using a sorted tree (logarithmic operations) or hash tables (amortized
+  constant operations).
+
+
+(A)
+~~~
+
+  Examine the first function in `assoc_lists.ml' which is called
+  `assoc'.  It operates on a key and an association list like the two
+  provided as `alist1' and `alist2'.
+
+  ,----
+  | let rec assoc query_key alist =
+  |   match alist with
+  |   | [] -> raise Not_found
+  |   | (key,value)::tail when query_key=key -> value
+  |   | _::tail -> assoc query_key tail
+  | ;;
+  |
+  | let alist1 = [(9,"nine");   (5,"five");    (2,"two");]
+  | let alist2 = [("nine",3.0); ("five",2.24); ("two",1.41); ("six",2.45)];;
+  `----
+
+  In a REPL, load this code and run the function on the following
+  inputs.
+  - 9 and alist1
+  - 2 and alist1
+  - 7 and alist1
+  - "six" and alist2
+  - "one" and alist2
+  - 1 and alist2
+
+  Show your results below and explain what the function is doing. Also
+  explain any errors for the above inputs and why the are happening.
+	# assoc 9 alist1;;
+	- : string = "nine"
+	# assoc 2 alist1;;
+	- : string = "two"
+	# assoc 7 alist1;;
+	Exception: Not_found.
+	# assoc "six" alist2;;
+	- : float = 2.45
+	# assoc "one" alist2;;
+	Exception: Not_found.
+	# assoc 1 alist2;;
+	Error: This expression has type (string * float) list
+	       but an expression was expected of type (int * 'a) list
+	       Type string is not compatible with type int
+
+
+assoc is returning the value associated with the query_key
+It returns not found if the query_key doesn't exist in the list.
+It returns an error if the query_key is of a different type than any of the keys in the list.
+
+(B)
+~~~
+
+  Examine the provided function `add_assoc' which adds an key/val pair
+  to an association list if the key is not present or modifies the value
+  associated with an existing key.
+
+  ,----
+  | 1  (* return a list with the given key/value added; if the key already
+  | 2     exists, changes association to the new value *)
+  | 3  let rec add_assoc key value alist =
+  | 4    match alist with
+  | 5    | [] -> (key,value)::[]
+  | 6    | (k,v) :: tail when key=k -> (key,value)::tail
+  | 7    | (k,v) :: tail -> (k,v) :: (add_assoc key value tail)
+  | 8  ;;
+  `----
+
+
+  You may wish to run this function on some inputs like
+  ,----
+  | # add_assoc 7 "seven" alist1;;
+  `----
+  to get acquainted with its operation.
+
+  Describe how this function works. Include the following in your
+  answer.
+  - Identify each case in the match/with statement as either a base case
+    or a recursive case.
+  - What situations does each case of the pattern matching expression
+    handle?
+  - How is pattern matching used to handle pairs in the list?
+add_assoc adds a new int to string association at the end of the association list
+If the list is empty create an associatoin and add it to the empty list. This is the base case.
+if the key already exists add a new association with the key and the new value, replacing the original value
+otherwise pop off the head pair from the list and recursively call add_assoc with the new pair and the tail of the list
+
+
+(C)
+~~~
+
+  At the bottom of `assoc_lists.ml' is a commented declaration for the
+  `remove_assoc key alist' function.  As the comment indicates, this
+  should remove any existing association from a given list.
+
+  ,----
+  | 1  (* return a list with the given key and associated value removed; if
+  | 2     the given key is not present, no change is made to the list. Does
+  | 3     not raise exceptions. *)
+  | 4  (* let rec remove_assoc key alist =  *)
+  `----
+
+  Complete this function. Use a similar code structure that that which
+  is used in `add_assoc'. Demonstrate that the function works correctly
+  in a REPL by removing some associations from `alist1' and `alist2'
+	# let rec remove_assoc key alist =
+	  match alist w  ith
+	    | [] ->   []
+	    | (k,v) :  : tail when key = k -> tail
+	      | (k,v) :: tail -> (k,v) :: (remove_assoc key tail)
+	;;
+	val remove_assoc : 'a -> ('a * 'b) list -> ('a * 'b) list = <fun>
+	# remove_assoc 9 alist1;;
+	- : (int * string) list = [(5, "five"); (2, "two")]
+	# remove_assoc "two" alist2;;
+	- : (string * float) list = [("nine", 3.); ("five", 2.24); ("six", 2.45)]
+
+
+Note: Built-in Association Lists
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  OCaml has functions operating on Association Lists built in. They are
+  available in the `List' module and can be called as follows.
+  ,----
+  | # let alist = [(9, "nine"); (5, "five"); (2, "two")];;
+  | val alist : (int * string) list = [(9, "nine"); (5, "five"); (2, "two")]
+  |
+  | # List.assoc 2 alist;;
+  | - : string = "two"
+  |
+  | # List.assoc 6 alist;;
+  | Exception: Not_found.
+  |
+  | # List.remove_assoc 5 alist;;
+  | - : (int * string) list = [(9, "nine"); (2, "two")]
+  `----
+
+  More details are in the module documentation for list here:
+  [https://caml.inria.fr/pub/docs/manual-ocaml/libref/List.html#1_Associationlists]
+
+  Note that the semantics for standard association lists are somewhat
+  different than those we implemented here: keys may be duplicated and
+  "left-most" bindings are returned. This makes adding on more efficient
+  at the expense of memory and removal complexity.
+
+
+PROBLEM 2: Records
+==================
+
+  Records are types defined to have multiple named *fields* of different
+  kinds. These are similar to C's structs and Java's objects. This
+  problem explores basic record definition and use.
+
+
+(A)
+~~~
+
+  Examine the provided source file `record_use.ml'. The first few lines
+  of this file contain a type declaration for a new record type called
+  `force_user'.
+
+  ,----
+  | 1  (* record type declaration *)
+  | 2  type force_user = {
+  | 3      name     : string;          (* field 1 *)
+  | 4      darkside : bool;            (* field 2 *)
+  | 5      episodes : int list;        (* field 3 *)
+  | 6    };;
+  `----
+
+  Below it are several examples of creating `force_user' records.  Make
+  use of this pattern to declare some additional `force_user' records
+  and paste your new code below. Demonstrate that your code works
+  properly by loading it in a REPL.
+	let vader = {
+	  name="Anakin Skywalker";
+	  darkside=true;
+	  episodes=[4;5;6]
+	};;
+
+	let obiwan = {
+	  name="Obi Wan Kenobi";
+	  darkside=false;
+	  episodes=[1;2;3;4]
+	};;
+
+	# let vader = {
+    name="Anakin Skywalker";
+  darks  ide=true;
+  epis  odes=[4;5;6]
+}
+
+      let obiwan = {
+    name="Obi Wan Kenobi";
+  darksi  de=false;
+  epis  odes=[1;2;3;4]
+}
+  ;;
+val vader : force_user =
+  {name = "Anakin Skywalker"; darkside = true; episodes = [4; 5; 6]}
+val obiwan : force_user =
+  {name = "Obi Wan Kenobi"; darkside = false; episodes = [1; 2; 3; 4]}
+
+(B)
+~~~
+
+  Record fields are accessed with dot notation. This can be done in
+  individual statements or during execution of functions. The following
+  code segments from `record_use.ml' show some examples.
+
+  ,----
+  |  1  (* field access *)
+  |  2  let last_jedi1 = luke.name;;
+  |  3  let last_jedi2 = rey.name;;
+  |  4  let sith_reigh = List.length sidious.episodes;;
+  |  5
+  |  6  (* functions on records *)
+  |  7  let name_of user =              (* retrieve the name *)
+  |  8    user.name
+  |  9  ;;
+  | 10
+  | 11  let episode_count user =        (* count episodes *)
+  | 12    List.length user.episodes
+  | 13  ;;
+  `----
+
+  Demonstrate in a REPL some field accesses on the data you have defined
+  like
+  - Accessing the darkside field
+  - Measuring the length of a name field with String.length
+  - Appending two episode field lists with @ (append) operator
+	# String.length vader.name;;
+	- : int = 16
+	# obiwan.darkside;;
+	- : bool = false
+	# obiwan.episodes @ vader.episodes;;
+	- : int list = [1; 2; 3; 4; 4; 5; 6]
+
+(C)
+~~~
+
+  Consider the function `seduced': it takes a `force_user' as an
+  argument and creates a new version of it using the `with' syntax.
+  ,----
+  | 1  let seduced user =              (* new record with field changed *)
+  | 2    let dark_user = {user with darkside=true} in
+  | 3    dark_user
+  | 4  ;;
+  `----
+
+  Use a REPL to demonstrate how `seduced' works.  Determine whether this
+  function actually changes the original record or not. Explain your
+  answer.
+	# seduced obiwan;;
+	- : force_user =
+	{name = "Obi Wan Kenobi"; darkside = true; episodes = [1; 2; 3; 4]}
+
+	This function creates a new record with the darkside value changed, but it doesn't change the original record.
+	It creates a new record dark_user with the values from the original and modifies that.
+
+
+(D)
+~~~
+
+  Write a function `sequel_appearance'. It takes a `force_user' and an
+  integer as parameters. It creates a new `force_user' record from the
+  old one with the integer parameter appended to the end of the
+  `episodes' field using the @ operator.  Its type and use are
+  demonstrated below.
+  ,----
+  | # #use "record_use.ml";;
+  | val sequel_appearance : force_user -> int -> force_user = <fun>
+  |
+  | # rey;;
+  | - : force_user = {name = "Rey"; darkside = false; episodes = [7; 8]}
+  | # sequel_appearance rey 9;;
+  | - : force_user = {name = "Rey"; darkside = false; episodes = [7; 8; 9]}
+  |
+  | # vader;;
+  | - : force_user =
+  | {name = "Anakin Skywalker"; darkside = true; episodes = [1; 2; 3; 4; 5; 6]}
+  | # sequel_appearance vader 10;;
+  | - : force_user =
+  | {name = "Anakin Skywalker"; darkside = true; episodes = [1; 2; 3; 4; 5; 6; 10]}
+  `----
+
+	let sequel_appearance user episode_num =
+	  let sequel_user = {user with episodes = (user.episodes @ episode_num::[])} in
+	  sequel_user
+	;;
+
+	
+PROBLEM 3: Feedback Survey
+==========================
+
+  For full credit on this lab, complete the Midterm Feedback Survey
+  which is available on Canvas
+  - Click "Quizzes"
+  - Select "Midterm Feedback"
+  - The survey is Anonymous and graded only on completion

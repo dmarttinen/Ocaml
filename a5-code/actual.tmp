@@ -1,0 +1,14 @@
+calculon> if true then if false then 1 else 2 else 3;
+- : IntDat(2)
+calculon> if if true 
+      then false 
+      else true 
+   then if false 
+        then 1 
+        else 2
+   else if false 
+        then 3 
+        else 4;
+- : IntDat(4)
+calculon> 
+That was so terrible I think you gave me cancer!

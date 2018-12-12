@@ -1,0 +1,195 @@
+                           __________________
+
+                            LAB 09 QUESTIONS
+                           __________________
+
+
+- Name: Dale Marttinen
+- NetID: mart2439
+
+Answer the questions below according to the lab specification. Write
+your answers directly in this text file and submit it to complete the
+lab.
+
+
+PROBLEM 1: Memfunc1 Module
+==========================
+
+(A)
+~~~
+
+  Examine `memfunc1.ml' and answer the following questions.
+  1. What is the name of the functor defined in the module?
+    Memoize
+  2. Like all functors, this one takes a parameter module. What bindings
+     must the parameter module have according to its signature?
+     func, compare_arg
+  3. The module that is created by the functor has several internal
+     bindings but only one of them is publicly visible. What is it and
+     how is this visibility control enforced?
+     call. It's in the signature
+
+(B)
+~~~
+
+  As in any other place a module is being defined, functors can
+  establish nested modules.  The functor in `Memfunc1' creates two
+  nested modules within its body.  Describe these two modules providing
+  their names and what their purpose appears to be. Describe how
+  bindings of the parameter module are used in these nested modules.
+
+  MapInterface contains the compare function. Allowing the use of Map.make It also grabs the arg_t type from FUNC1_SIG and the compare_arg
+
+  MemoMap creates a MapInterface using Map.Make. This maps arg_t to ret_t
+
+
+
+(C)
+~~~
+
+  Analyze the bindings for `arg_ret_map' and the function `call'.
+  Describe how these are used in conjunction the a function carried by
+  the parameter module.
+  call grabs the function from the parameter module and runs it on the arg passed in and then stores the result in the map.
+  arg_ret_map creates an empty map.
+
+
+PROBLEM 2: fib Program
+======================
+
+(A)
+~~~
+
+  Examine the first section of the provided `fib.ml' file. Describe how
+  the functor in `memfunc1.ml' is used at the top of `fib.ml'. Include a
+  description of how the parameter module to the functor is created.
+
+  Memoize is called using the parameter FibFunc which has all of the definitions Memoize requires.
+
+(B)
+~~~
+
+  The main intent of the program in `fib.ml' is to compare the amount of
+  time it takes to make repeated calls to the `fib' function versus a
+  memoized version of it in `MemoFib.call'.  Analyze the main code for
+  the program.
+  1. Identify where calls to `fib' and `MemoFib.func' are made.
+
+    Fib-> line 43, 69,
+    MemoFib-> line 52, 78,
+
+  2. Identify where the results of these calls are stored.
+
+    farr and marr,
+
+  3. Describe what function is used to gather timing information on how
+     long the repeated function calls take.
+    _
+
+
+
+(C)
+~~~
+
+  Use `ocamlc' to Compile and run the `fib.ml' program together with its
+  dependency `memfunc1.ml'. Run the resulting program with and paste in
+  the output in the space below.
+
+  mart2439@SAFL-Limonite:/mnt/c/Users/mart2439/ocaml/Ocaml-master/lab09-code$ ./fib
+  usage: ./fib {integer}
+
+  Note that the program requires command line argument, an integer. Use
+  30 as the parameter.
+
+  n = 30
+  ---------------------------------
+  Running loops on fib/mem functions
+  fib time: 0.0938 secs
+  mem time: 0.0938 secs
+  fib( 1) =        1  | MemoFib.call( 1) =        1
+  fib( 2) =        1  | MemoFib.call( 2) =        1
+  fib( 3) =        2  | MemoFib.call( 3) =        2
+  fib( 4) =        3  | MemoFib.call( 4) =        3
+  fib( 5) =        5  | MemoFib.call( 5) =        5
+  fib( 6) =        8  | MemoFib.call( 6) =        8
+  fib( 7) =       13  | MemoFib.call( 7) =       13
+  fib( 8) =       21  | MemoFib.call( 8) =       21
+  fib( 9) =       34  | MemoFib.call( 9) =       34
+  fib(10) =       55  | MemoFib.call(10) =       55
+  fib(11) =       89  | MemoFib.call(11) =       89
+  fib(12) =      144  | MemoFib.call(12) =      144
+  fib(13) =      233  | MemoFib.call(13) =      233
+  fib(14) =      377  | MemoFib.call(14) =      377
+  fib(15) =      610  | MemoFib.call(15) =      610
+  fib(16) =      987  | MemoFib.call(16) =      987
+  fib(17) =     1597  | MemoFib.call(17) =     1597
+  fib(18) =     2584  | MemoFib.call(18) =     2584
+  fib(19) =     4181  | MemoFib.call(19) =     4181
+  fib(20) =     6765  | MemoFib.call(20) =     6765
+  fib(21) =    10946  | MemoFib.call(21) =    10946
+  fib(22) =    17711  | MemoFib.call(22) =    17711
+  fib(23) =    28657  | MemoFib.call(23) =    28657
+  fib(24) =    46368  | MemoFib.call(24) =    46368
+  fib(25) =    75025  | MemoFib.call(25) =    75025
+  fib(26) =   121393  | MemoFib.call(26) =   121393
+  fib(27) =   196418  | MemoFib.call(27) =   196418
+  fib(28) =   317811  | MemoFib.call(28) =   317811
+  fib(29) =   514229  | MemoFib.call(29) =   514229
+  fib(30) =   832040  | MemoFib.call(30) =   832040
+  ---------------------------------
+  Re-running loops on fib/mem again
+  fib time: 0.1094 secs
+  mem time: 0.0000 secs
+  fib( 1) =        1  | MemoFib.call( 1) =        1
+  fib( 2) =        1  | MemoFib.call( 2) =        1
+  fib( 3) =        2  | MemoFib.call( 3) =        2
+  fib( 4) =        3  | MemoFib.call( 4) =        3
+  fib( 5) =        5  | MemoFib.call( 5) =        5
+  fib( 6) =        8  | MemoFib.call( 6) =        8
+  fib( 7) =       13  | MemoFib.call( 7) =       13
+  fib( 8) =       21  | MemoFib.call( 8) =       21
+  fib( 9) =       34  | MemoFib.call( 9) =       34
+  fib(10) =       55  | MemoFib.call(10) =       55
+  fib(11) =       89  | MemoFib.call(11) =       89
+  fib(12) =      144  | MemoFib.call(12) =      144
+  fib(13) =      233  | MemoFib.call(13) =      233
+  fib(14) =      377  | MemoFib.call(14) =      377
+  fib(15) =      610  | MemoFib.call(15) =      610
+  fib(16) =      987  | MemoFib.call(16) =      987
+  fib(17) =     1597  | MemoFib.call(17) =     1597
+  fib(18) =     2584  | MemoFib.call(18) =     2584
+  fib(19) =     4181  | MemoFib.call(19) =     4181
+  fib(20) =     6765  | MemoFib.call(20) =     6765
+  fib(21) =    10946  | MemoFib.call(21) =    10946
+  fib(22) =    17711  | MemoFib.call(22) =    17711
+  fib(23) =    28657  | MemoFib.call(23) =    28657
+  fib(24) =    46368  | MemoFib.call(24) =    46368
+  fib(25) =    75025  | MemoFib.call(25) =    75025
+  fib(26) =   121393  | MemoFib.call(26) =   121393
+  fib(27) =   196418  | MemoFib.call(27) =   196418
+  fib(28) =   317811  | MemoFib.call(28) =   317811
+  fib(29) =   514229  | MemoFib.call(29) =   514229
+  fib(30) =   832040  | MemoFib.call(30) =   832040
+
+(D)
+~~~
+
+  Describe why the time to run `fib' and `MemoFib.call' are very similar
+  in the first timing loop but drastically different in the second
+  timing loop. Relate your answer to the internal workings of the
+  `Memofunc1.Memoize' functor.
+  The first time around the results have to be evaluated for both functions. The second time, the memoized version, already has the values in the map, and it just has to grab them out.
+
+
+Optional Enrichment Problems
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  1. We have seen that `MemoFib.call 30' will take some time on the
+     first call but a subsequent call runs in almost no time.  Does this
+     mean that the speed of `MemoFib.call 31' will be shorter as well?
+     Why or why not?
+  2. The functor established in `Memofunc1' works for functions of 1
+     parameter.  How would one go about handling functions of two,
+     three, or four arguments? If one is writing functions to be
+     compatible with memoization, how could one write the functions of
+     multiple arguments so as to avoid the need write more functors?

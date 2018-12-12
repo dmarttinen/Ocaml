@@ -1,0 +1,720 @@
+"revfuncs.ml" 1 0 4 "revfuncs.ml" 1 0 13
+type(
+  'a array -> unit
+)
+ident(
+  def array_rev "revfuncs.ml" 45 1267 1267 "revfuncs.ml" 1 0 -1
+)
+"revfuncs.ml" 1 0 14 "revfuncs.ml" 1 0 17
+type(
+  'a array
+)
+ident(
+  def arr "revfuncs.ml" 2 21 23 "revfuncs.ml" 15 439 446
+)
+"revfuncs.ml" 2 21 27 "revfuncs.ml" 2 21 30
+type(
+  int
+)
+ident(
+  def len "revfuncs.ml" 3 54 56 "revfuncs.ml" 15 439 446
+)
+"revfuncs.ml" 2 21 33 "revfuncs.ml" 2 21 45
+type(
+  'a array -> int
+)
+ident(
+  int_ref Array.length "array.mli" 18 1105 1105 "array.mli" 18 1105 1156
+)
+"revfuncs.ml" 2 21 46 "revfuncs.ml" 2 21 49
+type(
+  'a array
+)
+ident(
+  int_ref arr "revfuncs.ml" 1 0 14 "revfuncs.ml" 1 0 17
+)
+"revfuncs.ml" 2 21 33 "revfuncs.ml" 2 21 49
+type(
+  int
+)
+"revfuncs.ml" 3 54 60 "revfuncs.ml" 3 54 65
+type(
+  int ref
+)
+ident(
+  def place "revfuncs.ml" 4 94 96 "revfuncs.ml" 15 439 446
+)
+"revfuncs.ml" 3 54 78 "revfuncs.ml" 3 54 81
+type(
+  int -> int ref
+)
+ident(
+  int_ref Pervasives.ref "pervasives.mli" 1063 41160 41160 "pervasives.mli" 1063 41160 41204
+)
+"revfuncs.ml" 3 54 83 "revfuncs.ml" 3 54 86
+type(
+  int
+)
+ident(
+  int_ref len "revfuncs.ml" 2 21 27 "revfuncs.ml" 2 21 30
+)
+"revfuncs.ml" 3 54 86 "revfuncs.ml" 3 54 87
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Pervasives.( - ) "pervasives.mli" 265 10396 10396 "pervasives.mli" 265 10396 10442
+)
+"revfuncs.ml" 3 54 87 "revfuncs.ml" 3 54 88
+type(
+  int
+)
+"revfuncs.ml" 3 54 82 "revfuncs.ml" 3 54 89
+type(
+  int
+)
+"revfuncs.ml" 3 54 78 "revfuncs.ml" 3 54 89
+type(
+  int ref
+)
+type(
+  int ref
+)
+"revfuncs.ml" 4 94 100 "revfuncs.ml" 4 94 107
+type(
+  int ref
+)
+ident(
+  def counter "revfuncs.ml" 5 136 138 "revfuncs.ml" 15 439 446
+)
+"revfuncs.ml" 4 94 120 "revfuncs.ml" 4 94 123
+type(
+  int -> int ref
+)
+ident(
+  int_ref Pervasives.ref "pervasives.mli" 1063 41160 41160 "pervasives.mli" 1063 41160 41204
+)
+"revfuncs.ml" 4 94 125 "revfuncs.ml" 4 94 128
+type(
+  int
+)
+ident(
+  int_ref len "revfuncs.ml" 2 21 27 "revfuncs.ml" 2 21 30
+)
+"revfuncs.ml" 4 94 128 "revfuncs.ml" 4 94 129
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Pervasives.( / ) "pervasives.mli" 273 10663 10663 "pervasives.mli" 273 10663 10709
+)
+"revfuncs.ml" 4 94 129 "revfuncs.ml" 4 94 130
+type(
+  int
+)
+"revfuncs.ml" 4 94 124 "revfuncs.ml" 4 94 131
+type(
+  int
+)
+"revfuncs.ml" 4 94 120 "revfuncs.ml" 4 94 131
+type(
+  int ref
+)
+type(
+  int ref
+)
+"revfuncs.ml" 5 136 141 "revfuncs.ml" 5 136 144
+type(
+  int
+)
+ident(
+  int_ref len "revfuncs.ml" 2 21 27 "revfuncs.ml" 2 21 30
+)
+"revfuncs.ml" 5 136 145 "revfuncs.ml" 5 136 147
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Pervasives.( != ) "pervasives.mli" 127 5608 5608 "pervasives.mli" 127 5608 5653
+)
+"revfuncs.ml" 5 136 148 "revfuncs.ml" 5 136 149
+type(
+  int
+)
+"revfuncs.ml" 5 136 141 "revfuncs.ml" 5 136 149
+type(
+  bool
+)
+"revfuncs.ml" 7 167 177 "revfuncs.ml" 7 167 180
+type(
+  int
+)
+ident(
+  int_ref len "revfuncs.ml" 2 21 27 "revfuncs.ml" 2 21 30
+)
+"revfuncs.ml" 7 167 181 "revfuncs.ml" 7 167 184
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Pervasives.( mod ) "pervasives.mli" 282 11109 11109 "pervasives.mli" 282 11109 11157
+)
+"revfuncs.ml" 7 167 185 "revfuncs.ml" 7 167 186
+type(
+  int
+)
+"revfuncs.ml" 7 167 176 "revfuncs.ml" 7 167 187
+type(
+  int
+)
+"revfuncs.ml" 7 167 188 "revfuncs.ml" 7 167 189
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Pervasives.( = ) "pervasives.mli" 51 2086 2086 "pervasives.mli" 51 2086 2130
+)
+"revfuncs.ml" 7 167 190 "revfuncs.ml" 7 167 191
+type(
+  int
+)
+"revfuncs.ml" 7 167 176 "revfuncs.ml" 7 167 191
+type(
+  bool
+)
+"revfuncs.ml" 8 198 206 "revfuncs.ml" 8 198 213
+type(
+  int ref
+)
+ident(
+  int_ref counter "revfuncs.ml" 4 94 100 "revfuncs.ml" 4 94 107
+)
+"revfuncs.ml" 8 198 214 "revfuncs.ml" 8 198 216
+type(
+  int ref -> int -> unit
+)
+ident(
+  int_ref Pervasives.( := ) "pervasives.mli" 1071 41452 41452 "pervasives.mli" 1071 41452 41505
+)
+"revfuncs.ml" 8 198 217 "revfuncs.ml" 8 198 218
+type(
+  int ref -> int
+)
+ident(
+  int_ref Pervasives.( ! ) "pervasives.mli" 1066 41266 41266 "pervasives.mli" 1066 41266 41307
+)
+"revfuncs.ml" 8 198 218 "revfuncs.ml" 8 198 225
+type(
+  int ref
+)
+ident(
+  int_ref counter "revfuncs.ml" 4 94 100 "revfuncs.ml" 4 94 107
+)
+"revfuncs.ml" 8 198 217 "revfuncs.ml" 8 198 225
+type(
+  int
+)
+"revfuncs.ml" 8 198 226 "revfuncs.ml" 8 198 227
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Pervasives.( - ) "pervasives.mli" 265 10396 10396 "pervasives.mli" 265 10396 10442
+)
+"revfuncs.ml" 8 198 228 "revfuncs.ml" 8 198 229
+type(
+  int
+)
+"revfuncs.ml" 8 198 217 "revfuncs.ml" 8 198 229
+type(
+  int
+)
+"revfuncs.ml" 8 198 206 "revfuncs.ml" 8 198 229
+type(
+  unit
+)
+"revfuncs.ml" 7 167 173 "revfuncs.ml" 8 198 229
+type(
+  unit
+)
+"revfuncs.ml" 9 232 246 "revfuncs.ml" 9 232 247
+type(
+  int
+)
+"revfuncs.ml" 9 232 251 "revfuncs.ml" 9 232 252
+type(
+  int ref -> int
+)
+ident(
+  int_ref Pervasives.( ! ) "pervasives.mli" 1066 41266 41266 "pervasives.mli" 1066 41266 41307
+)
+"revfuncs.ml" 9 232 252 "revfuncs.ml" 9 232 259
+type(
+  int ref
+)
+ident(
+  int_ref counter "revfuncs.ml" 4 94 100 "revfuncs.ml" 4 94 107
+)
+"revfuncs.ml" 9 232 251 "revfuncs.ml" 9 232 259
+type(
+  int
+)
+"revfuncs.ml" 10 264 276 "revfuncs.ml" 10 264 280
+type(
+  'a
+)
+ident(
+  def temp "revfuncs.ml" 11 303 313 "revfuncs.ml" 13 392 422
+)
+"revfuncs.ml" 10 264 283 "revfuncs.ml" 10 264 292
+type(
+  'a array -> int -> 'a
+)
+ident(
+  int_ref Array.get "array.mli" 21 1224 1224 "array.mli" 21 1224 1280
+)
+"revfuncs.ml" 10 264 293 "revfuncs.ml" 10 264 296
+type(
+  'a array
+)
+ident(
+  int_ref arr "revfuncs.ml" 1 0 14 "revfuncs.ml" 1 0 17
+)
+"revfuncs.ml" 10 264 297 "revfuncs.ml" 10 264 298
+type(
+  int
+)
+ident(
+  int_ref i "revfuncs.ml" 9 232 238 "revfuncs.ml" 14 424 436
+)
+"revfuncs.ml" 10 264 283 "revfuncs.ml" 10 264 298
+type(
+  'a
+)
+"revfuncs.ml" 11 303 313 "revfuncs.ml" 11 303 322
+type(
+  'a array -> int -> 'a -> unit
+)
+ident(
+  int_ref Array.set "array.mli" 30 1607 1607 "array.mli" 30 1607 1671
+)
+"revfuncs.ml" 11 303 323 "revfuncs.ml" 11 303 326
+type(
+  'a array
+)
+ident(
+  int_ref arr "revfuncs.ml" 1 0 14 "revfuncs.ml" 1 0 17
+)
+"revfuncs.ml" 11 303 327 "revfuncs.ml" 11 303 328
+type(
+  int
+)
+ident(
+  int_ref i "revfuncs.ml" 9 232 238 "revfuncs.ml" 14 424 436
+)
+"revfuncs.ml" 11 303 330 "revfuncs.ml" 11 303 339
+type(
+  'a array -> int -> 'a
+)
+ident(
+  int_ref Array.get "array.mli" 21 1224 1224 "array.mli" 21 1224 1280
+)
+"revfuncs.ml" 11 303 340 "revfuncs.ml" 11 303 343
+type(
+  'a array
+)
+ident(
+  int_ref arr "revfuncs.ml" 1 0 14 "revfuncs.ml" 1 0 17
+)
+"revfuncs.ml" 11 303 344 "revfuncs.ml" 11 303 345
+type(
+  int ref -> int
+)
+ident(
+  int_ref Pervasives.( ! ) "pervasives.mli" 1066 41266 41266 "pervasives.mli" 1066 41266 41307
+)
+"revfuncs.ml" 11 303 345 "revfuncs.ml" 11 303 350
+type(
+  int ref
+)
+ident(
+  int_ref place "revfuncs.ml" 3 54 60 "revfuncs.ml" 3 54 65
+)
+"revfuncs.ml" 11 303 344 "revfuncs.ml" 11 303 350
+type(
+  int
+)
+"revfuncs.ml" 11 303 329 "revfuncs.ml" 11 303 351
+type(
+  'a
+)
+"revfuncs.ml" 11 303 313 "revfuncs.ml" 11 303 351
+type(
+  unit
+)
+"revfuncs.ml" 12 354 364 "revfuncs.ml" 12 354 373
+type(
+  'a array -> int -> 'a -> unit
+)
+ident(
+  int_ref Array.set "array.mli" 30 1607 1607 "array.mli" 30 1607 1671
+)
+"revfuncs.ml" 12 354 374 "revfuncs.ml" 12 354 377
+type(
+  'a array
+)
+ident(
+  int_ref arr "revfuncs.ml" 1 0 14 "revfuncs.ml" 1 0 17
+)
+"revfuncs.ml" 12 354 378 "revfuncs.ml" 12 354 379
+type(
+  int ref -> int
+)
+ident(
+  int_ref Pervasives.( ! ) "pervasives.mli" 1066 41266 41266 "pervasives.mli" 1066 41266 41307
+)
+"revfuncs.ml" 12 354 379 "revfuncs.ml" 12 354 384
+type(
+  int ref
+)
+ident(
+  int_ref place "revfuncs.ml" 3 54 60 "revfuncs.ml" 3 54 65
+)
+"revfuncs.ml" 12 354 378 "revfuncs.ml" 12 354 384
+type(
+  int
+)
+"revfuncs.ml" 12 354 385 "revfuncs.ml" 12 354 389
+type(
+  'a
+)
+ident(
+  int_ref temp "revfuncs.ml" 10 264 276 "revfuncs.ml" 10 264 280
+)
+"revfuncs.ml" 12 354 364 "revfuncs.ml" 12 354 389
+type(
+  unit
+)
+"revfuncs.ml" 13 392 402 "revfuncs.ml" 13 392 407
+type(
+  int ref
+)
+ident(
+  int_ref place "revfuncs.ml" 3 54 60 "revfuncs.ml" 3 54 65
+)
+"revfuncs.ml" 13 392 408 "revfuncs.ml" 13 392 410
+type(
+  int ref -> int -> unit
+)
+ident(
+  int_ref Pervasives.( := ) "pervasives.mli" 1071 41452 41452 "pervasives.mli" 1071 41452 41505
+)
+"revfuncs.ml" 13 392 411 "revfuncs.ml" 13 392 412
+type(
+  int ref -> int
+)
+ident(
+  int_ref Pervasives.( ! ) "pervasives.mli" 1066 41266 41266 "pervasives.mli" 1066 41266 41307
+)
+"revfuncs.ml" 13 392 412 "revfuncs.ml" 13 392 417
+type(
+  int ref
+)
+ident(
+  int_ref place "revfuncs.ml" 3 54 60 "revfuncs.ml" 3 54 65
+)
+"revfuncs.ml" 13 392 411 "revfuncs.ml" 13 392 417
+type(
+  int
+)
+"revfuncs.ml" 13 392 418 "revfuncs.ml" 13 392 419
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Pervasives.( - ) "pervasives.mli" 265 10396 10396 "pervasives.mli" 265 10396 10442
+)
+"revfuncs.ml" 13 392 420 "revfuncs.ml" 13 392 421
+type(
+  int
+)
+"revfuncs.ml" 13 392 411 "revfuncs.ml" 13 392 421
+type(
+  int
+)
+"revfuncs.ml" 13 392 402 "revfuncs.ml" 13 392 421
+type(
+  unit
+)
+"revfuncs.ml" 12 354 364 "revfuncs.ml" 13 392 422
+type(
+  unit
+)
+"revfuncs.ml" 11 303 313 "revfuncs.ml" 13 392 422
+type(
+  unit
+)
+"revfuncs.ml" 10 264 272 "revfuncs.ml" 13 392 422
+type(
+  unit
+)
+"revfuncs.ml" 9 232 238 "revfuncs.ml" 14 424 436
+type(
+  unit
+)
+"revfuncs.ml" 6 156 160 "revfuncs.ml" 15 439 446
+type(
+  unit
+)
+"revfuncs.ml" 5 136 138 "revfuncs.ml" 15 439 446
+type(
+  unit
+)
+"revfuncs.ml" 4 94 96 "revfuncs.ml" 15 439 446
+type(
+  unit
+)
+"revfuncs.ml" 3 54 56 "revfuncs.ml" 15 439 446
+type(
+  unit
+)
+"revfuncs.ml" 2 21 23 "revfuncs.ml" 15 439 446
+type(
+  unit
+)
+"revfuncs.ml" 45 1267 1271 "revfuncs.ml" 45 1267 1279
+type(
+  'a list -> 'a list
+)
+ident(
+  def list_rev "revfuncs.ml" 52 1503 1516 "revfuncs.ml" 1 0 -1
+)
+"revfuncs.ml" 45 1267 1280 "revfuncs.ml" 45 1267 1283
+type(
+  'a list
+)
+ident(
+  def lst "revfuncs.ml" 46 1287 1289 "revfuncs.ml" 52 1503 1516
+)
+"revfuncs.ml" 46 1287 1297 "revfuncs.ml" 46 1287 1301
+type(
+  'b list -> 'b list -> 'b list
+)
+ident(
+  def help "revfuncs.ml" 46 1287 1289 "revfuncs.ml" 52 1503 1516
+)
+"revfuncs.ml" 46 1287 1302 "revfuncs.ml" 46 1287 1309
+type(
+  'b list
+)
+ident(
+  def oldlist "revfuncs.ml" 46 1287 1310 "revfuncs.ml" 50 1424 1495
+)
+"revfuncs.ml" 46 1287 1310 "revfuncs.ml" 46 1287 1317
+type(
+  'b list
+)
+ident(
+  def revlist "revfuncs.ml" 47 1321 1325 "revfuncs.ml" 50 1424 1495
+)
+"revfuncs.ml" 47 1321 1331 "revfuncs.ml" 47 1321 1338
+type(
+  'b list
+)
+ident(
+  int_ref oldlist "revfuncs.ml" 46 1287 1302 "revfuncs.ml" 46 1287 1309
+)
+"revfuncs.ml" 48 1345 1353 "revfuncs.ml" 48 1345 1355
+type(
+  'b list
+)
+"revfuncs.ml" 48 1345 1359 "revfuncs.ml" 48 1345 1366
+type(
+  'b list
+)
+ident(
+  int_ref revlist "revfuncs.ml" 46 1287 1310 "revfuncs.ml" 46 1287 1317
+)
+"revfuncs.ml" 49 1368 1376 "revfuncs.ml" 49 1368 1380
+type(
+  'b
+)
+ident(
+  def head "revfuncs.ml" 49 1368 1388 "revfuncs.ml" 49 1368 1422
+)
+"revfuncs.ml" 49 1368 1382 "revfuncs.ml" 49 1368 1384
+type(
+  'b list
+)
+"revfuncs.ml" 49 1368 1376 "revfuncs.ml" 49 1368 1384
+type(
+  'b list
+)
+"revfuncs.ml" 49 1368 1388 "revfuncs.ml" 49 1368 1392
+type(
+  'b list -> 'b list -> 'b list
+)
+ident(
+  int_ref help "revfuncs.ml" 46 1287 1297 "revfuncs.ml" 46 1287 1301
+)
+"revfuncs.ml" 49 1368 1393 "revfuncs.ml" 49 1368 1395
+type(
+  'b list
+)
+"revfuncs.ml" 49 1368 1397 "revfuncs.ml" 49 1368 1404
+type(
+  'b list -> 'b
+)
+ident(
+  int_ref List.hd "list.mli" 51 2344 2344 "list.mli" 51 2344 2366
+)
+"revfuncs.ml" 49 1368 1405 "revfuncs.ml" 49 1368 1412
+type(
+  'b list
+)
+ident(
+  int_ref oldlist "revfuncs.ml" 46 1287 1302 "revfuncs.ml" 46 1287 1309
+)
+"revfuncs.ml" 49 1368 1397 "revfuncs.ml" 49 1368 1412
+call(
+  stack
+)
+type(
+  'b
+)
+"revfuncs.ml" 49 1368 1414 "revfuncs.ml" 49 1368 1421
+type(
+  'b list
+)
+ident(
+  int_ref revlist "revfuncs.ml" 46 1287 1310 "revfuncs.ml" 46 1287 1317
+)
+"revfuncs.ml" 49 1368 1396 "revfuncs.ml" 49 1368 1422
+type(
+  'b list
+)
+"revfuncs.ml" 49 1368 1388 "revfuncs.ml" 49 1368 1422
+call(
+  tail
+)
+type(
+  'b list
+)
+"revfuncs.ml" 50 1424 1432 "revfuncs.ml" 50 1424 1436
+type(
+  'b
+)
+ident(
+  def head "revfuncs.ml" 50 1424 1446 "revfuncs.ml" 50 1424 1495
+)
+"revfuncs.ml" 50 1424 1438 "revfuncs.ml" 50 1424 1442
+type(
+  'b list
+)
+ident(
+  def tail "revfuncs.ml" 50 1424 1446 "revfuncs.ml" 50 1424 1495
+)
+"revfuncs.ml" 50 1424 1432 "revfuncs.ml" 50 1424 1442
+type(
+  'b list
+)
+"revfuncs.ml" 50 1424 1446 "revfuncs.ml" 50 1424 1450
+type(
+  'b list -> 'b list -> 'b list
+)
+ident(
+  int_ref help "revfuncs.ml" 46 1287 1297 "revfuncs.ml" 46 1287 1301
+)
+"revfuncs.ml" 50 1424 1452 "revfuncs.ml" 50 1424 1459
+type(
+  'b list -> 'b list
+)
+ident(
+  int_ref List.tl "list.mli" 55 2465 2465 "list.mli" 55 2465 2492
+)
+"revfuncs.ml" 50 1424 1460 "revfuncs.ml" 50 1424 1467
+type(
+  'b list
+)
+ident(
+  int_ref oldlist "revfuncs.ml" 46 1287 1302 "revfuncs.ml" 46 1287 1309
+)
+"revfuncs.ml" 50 1424 1451 "revfuncs.ml" 50 1424 1468
+call(
+  stack
+)
+type(
+  'b list
+)
+"revfuncs.ml" 50 1424 1470 "revfuncs.ml" 50 1424 1477
+type(
+  'b list -> 'b
+)
+ident(
+  int_ref List.hd "list.mli" 51 2344 2344 "list.mli" 51 2344 2366
+)
+"revfuncs.ml" 50 1424 1478 "revfuncs.ml" 50 1424 1485
+type(
+  'b list
+)
+ident(
+  int_ref oldlist "revfuncs.ml" 46 1287 1302 "revfuncs.ml" 46 1287 1309
+)
+"revfuncs.ml" 50 1424 1470 "revfuncs.ml" 50 1424 1485
+call(
+  stack
+)
+type(
+  'b
+)
+"revfuncs.ml" 50 1424 1487 "revfuncs.ml" 50 1424 1494
+type(
+  'b list
+)
+ident(
+  int_ref revlist "revfuncs.ml" 46 1287 1310 "revfuncs.ml" 46 1287 1317
+)
+"revfuncs.ml" 50 1424 1469 "revfuncs.ml" 50 1424 1495
+type(
+  'b list
+)
+"revfuncs.ml" 50 1424 1446 "revfuncs.ml" 50 1424 1495
+call(
+  tail
+)
+type(
+  'b list
+)
+"revfuncs.ml" 47 1321 1325 "revfuncs.ml" 50 1424 1495
+type(
+  'b list
+)
+"revfuncs.ml" 52 1503 1505 "revfuncs.ml" 52 1503 1509
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  int_ref help "revfuncs.ml" 46 1287 1297 "revfuncs.ml" 46 1287 1301
+)
+"revfuncs.ml" 52 1503 1510 "revfuncs.ml" 52 1503 1513
+type(
+  'a list
+)
+ident(
+  int_ref lst "revfuncs.ml" 45 1267 1280 "revfuncs.ml" 45 1267 1283
+)
+"revfuncs.ml" 52 1503 1514 "revfuncs.ml" 52 1503 1516
+type(
+  'a list
+)
+"revfuncs.ml" 52 1503 1505 "revfuncs.ml" 52 1503 1516
+call(
+  tail
+)
+type(
+  'a list
+)
+"revfuncs.ml" 46 1287 1289 "revfuncs.ml" 52 1503 1516
+type(
+  'a list
+)

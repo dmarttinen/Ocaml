@@ -1,0 +1,2691 @@
+"calceval.ml" 7 125 141 "calceval.ml" 7 125 157
+call(
+  stack
+)
+"calceval.ml" 22 581 585 "calceval.ml" 22 581 597
+type(
+  varmap_t
+)
+ident(
+  def empty_varmap "calceval.ml" 25 687 687 "calceval.ml" 1 0 -1
+)
+"calceval.ml" 22 581 611 "calceval.ml" 22 581 623
+type(
+  varmap_t
+)
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref Varmap.empty "map.mli" 70 2829 2833 "map.mli" 70 2829 2848
+)
+"calceval.ml" 25 687 695 "calceval.ml" 25 687 706
+type(
+  data_t -> string
+)
+ident(
+  def data_string "calceval.ml" 25 687 687 "calceval.ml" 1 0 -1
+)
+"calceval.ml" 25 687 707 "calceval.ml" 25 687 711
+type(
+  data_t
+)
+ident(
+  def data "calceval.ml" 26 714 716 "calceval.ml" 29 816 875
+)
+"calceval.ml" 26 714 722 "calceval.ml" 26 714 726
+type(
+  data_t
+)
+ident(
+  int_ref data "calceval.ml" 25 687 707 "calceval.ml" 25 687 711
+)
+"calceval.ml" 27 732 743 "calceval.ml" 27 732 744
+ident(
+  def i "calceval.ml" 27 732 750 "calceval.ml" 27 732 773
+)
+"calceval.ml" 27 732 742 "calceval.ml" 27 732 745
+type(
+  int
+)
+"calceval.ml" 27 732 736 "calceval.ml" 27 732 745
+type(
+  data_t
+)
+"calceval.ml" 27 732 750 "calceval.ml" 27 732 757
+type(
+  (int -> string, unit, string) format -> int -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 27 732 758 "calceval.ml" 27 732 770
+type(
+  (int -> string, unit, string) format
+)
+"calceval.ml" 27 732 772 "calceval.ml" 27 732 773
+type(
+  int
+)
+ident(
+  int_ref i "calceval.ml" 27 732 742 "calceval.ml" 27 732 745
+)
+"calceval.ml" 27 732 750 "calceval.ml" 27 732 773
+call(
+  tail
+)
+type(
+  string
+)
+"calceval.ml" 28 774 786 "calceval.ml" 28 774 787
+ident(
+  def b "calceval.ml" 28 774 792 "calceval.ml" 28 774 815
+)
+"calceval.ml" 28 774 785 "calceval.ml" 28 774 788
+type(
+  bool
+)
+"calceval.ml" 28 774 778 "calceval.ml" 28 774 788
+type(
+  data_t
+)
+"calceval.ml" 28 774 792 "calceval.ml" 28 774 799
+type(
+  (bool -> string, unit, string) format -> bool -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 28 774 800 "calceval.ml" 28 774 813
+type(
+  (bool -> string, unit, string) format
+)
+"calceval.ml" 28 774 814 "calceval.ml" 28 774 815
+type(
+  bool
+)
+ident(
+  int_ref b "calceval.ml" 28 774 785 "calceval.ml" 28 774 788
+)
+"calceval.ml" 28 774 792 "calceval.ml" 28 774 815
+call(
+  tail
+)
+type(
+  string
+)
+"calceval.ml" 29 816 828 "calceval.ml" 29 816 829
+ident(
+  def c "calceval.ml" 29 816 834 "calceval.ml" 29 816 875
+)
+"calceval.ml" 29 816 827 "calceval.ml" 29 816 830
+type(
+  data_t.Closure
+)
+"calceval.ml" 29 816 820 "calceval.ml" 29 816 830
+type(
+  data_t
+)
+"calceval.ml" 29 816 834 "calceval.ml" 29 816 841
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 29 816 842 "calceval.ml" 29 816 862
+type(
+  (string -> string, unit, string) format
+)
+"calceval.ml" 29 816 863 "calceval.ml" 29 816 864
+type(
+  data_t.Closure
+)
+ident(
+  int_ref c "calceval.ml" 29 816 827 "calceval.ml" 29 816 830
+)
+"calceval.ml" 29 816 863 "calceval.ml" 29 816 875
+type(
+  string
+)
+"calceval.ml" 29 816 834 "calceval.ml" 29 816 875
+call(
+  tail
+)
+type(
+  string
+)
+"calceval.ml" 26 714 716 "calceval.ml" 29 816 875
+type(
+  string
+)
+"calceval.ml" 32 934 938 "calceval.ml" 32 934 954
+type(
+  data_t -> string
+)
+ident(
+  def data_long_string "calceval.ml" 25 687 687 "calceval.ml" 1 0 -1
+)
+"calceval.ml" 32 934 955 "calceval.ml" 32 934 959
+type(
+  data_t
+)
+ident(
+  def data "calceval.ml" 33 962 964 "calceval.ml" 38 1142 1227
+)
+"calceval.ml" 33 962 970 "calceval.ml" 33 962 974
+type(
+  data_t
+)
+ident(
+  int_ref data "calceval.ml" 32 934 955 "calceval.ml" 32 934 959
+)
+"calceval.ml" 34 980 991 "calceval.ml" 34 980 992
+ident(
+  def i "calceval.ml" 34 980 998 "calceval.ml" 34 980 1021
+)
+"calceval.ml" 34 980 990 "calceval.ml" 34 980 993
+type(
+  int
+)
+"calceval.ml" 34 980 984 "calceval.ml" 34 980 993
+type(
+  data_t
+)
+"calceval.ml" 34 980 998 "calceval.ml" 34 980 1005
+type(
+  (int -> string, unit, string) format -> int -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 34 980 1006 "calceval.ml" 34 980 1018
+type(
+  (int -> string, unit, string) format
+)
+"calceval.ml" 34 980 1020 "calceval.ml" 34 980 1021
+type(
+  int
+)
+ident(
+  int_ref i "calceval.ml" 34 980 990 "calceval.ml" 34 980 993
+)
+"calceval.ml" 34 980 998 "calceval.ml" 34 980 1021
+call(
+  tail
+)
+type(
+  string
+)
+"calceval.ml" 35 1022 1034 "calceval.ml" 35 1022 1035
+ident(
+  def b "calceval.ml" 35 1022 1040 "calceval.ml" 35 1022 1063
+)
+"calceval.ml" 35 1022 1033 "calceval.ml" 35 1022 1036
+type(
+  bool
+)
+"calceval.ml" 35 1022 1026 "calceval.ml" 35 1022 1036
+type(
+  data_t
+)
+"calceval.ml" 35 1022 1040 "calceval.ml" 35 1022 1047
+type(
+  (bool -> string, unit, string) format -> bool -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 35 1022 1048 "calceval.ml" 35 1022 1061
+type(
+  (bool -> string, unit, string) format
+)
+"calceval.ml" 35 1022 1062 "calceval.ml" 35 1022 1063
+type(
+  bool
+)
+ident(
+  int_ref b "calceval.ml" 35 1022 1033 "calceval.ml" 35 1022 1036
+)
+"calceval.ml" 35 1022 1040 "calceval.ml" 35 1022 1063
+call(
+  tail
+)
+type(
+  string
+)
+"calceval.ml" 36 1064 1076 "calceval.ml" 36 1064 1077
+ident(
+  def c "calceval.ml" 37 1082 1087 "calceval.ml" 38 1142 1227
+)
+"calceval.ml" 36 1064 1075 "calceval.ml" 36 1064 1078
+type(
+  data_t.Closure
+)
+"calceval.ml" 36 1064 1068 "calceval.ml" 36 1064 1078
+type(
+  data_t
+)
+"calceval.ml" 37 1082 1087 "calceval.ml" 37 1082 1094
+type(
+  (string -> string -> string -> string, unit, string) format ->
+  string -> string -> string -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 37 1082 1095 "calceval.ml" 37 1082 1141
+type(
+  (string -> string -> string -> string, unit, string) format
+)
+"calceval.ml" 38 1142 1149 "calceval.ml" 38 1142 1150
+type(
+  data_t.Closure
+)
+ident(
+  int_ref c "calceval.ml" 36 1064 1075 "calceval.ml" 36 1064 1078
+)
+"calceval.ml" 38 1142 1149 "calceval.ml" 38 1142 1161
+type(
+  string
+)
+"calceval.ml" 38 1142 1163 "calceval.ml" 38 1142 1176
+type(
+  varmap_t -> string
+)
+ident(
+  int_ref varmap_string "calceval.ml" 43 1384 1388 "calceval.ml" 43 1384 1401
+)
+"calceval.ml" 38 1142 1177 "calceval.ml" 38 1142 1178
+type(
+  data_t.Closure
+)
+ident(
+  int_ref c "calceval.ml" 36 1064 1075 "calceval.ml" 36 1064 1078
+)
+"calceval.ml" 38 1142 1177 "calceval.ml" 38 1142 1185
+type(
+  varmap_t
+)
+"calceval.ml" 38 1142 1162 "calceval.ml" 38 1142 1186
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 38 1142 1188 "calceval.ml" 38 1142 1214
+type(
+  Calcparse.expr -> string
+)
+ident(
+  int_ref Calcparse.parsetree_string "calcparse.ml" 52 1789 1793 "calcparse.ml" 52 1789 1809
+)
+"calceval.ml" 38 1142 1215 "calceval.ml" 38 1142 1216
+type(
+  data_t.Closure
+)
+ident(
+  int_ref c "calceval.ml" 36 1064 1075 "calceval.ml" 36 1064 1078
+)
+"calceval.ml" 38 1142 1215 "calceval.ml" 38 1142 1226
+type(
+  Calcparse.expr
+)
+"calceval.ml" 38 1142 1187 "calceval.ml" 38 1142 1227
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 37 1082 1087 "calceval.ml" 38 1142 1227
+call(
+  tail
+)
+type(
+  string
+)
+"calceval.ml" 33 962 964 "calceval.ml" 38 1142 1227
+type(
+  string
+)
+"calceval.ml" 43 1384 1388 "calceval.ml" 43 1384 1401
+type(
+  varmap_t -> string
+)
+ident(
+  def varmap_string "calceval.ml" 25 687 687 "calceval.ml" 1 0 -1
+)
+"calceval.ml" 43 1384 1402 "calceval.ml" 43 1384 1408
+type(
+  varmap_t
+)
+ident(
+  def varmap "calceval.ml" 44 1411 1413 "calceval.ml" 54 1787 1808
+)
+"calceval.ml" 44 1411 1417 "calceval.ml" 44 1411 1420
+type(
+  Buffer.t
+)
+ident(
+  def buf "calceval.ml" 45 1497 1499 "calceval.ml" 54 1787 1808
+)
+"calceval.ml" 44 1411 1423 "calceval.ml" 44 1411 1436
+type(
+  int -> Buffer.t
+)
+ident(
+  int_ref Buffer.create "buffer.mli" 27 1376 1376 "buffer.mli" 27 1376 1397
+)
+"calceval.ml" 44 1411 1437 "calceval.ml" 44 1411 1440
+type(
+  int
+)
+"calceval.ml" 44 1411 1423 "calceval.ml" 44 1411 1440
+call(
+  stack
+)
+type(
+  Buffer.t
+)
+"calceval.ml" 45 1497 1499 "calceval.ml" 45 1497 1516
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  int_ref Buffer.add_string "buffer.mli" 108 4464 4464 "buffer.mli" 108 4464 4500
+)
+"calceval.ml" 45 1497 1517 "calceval.ml" 45 1497 1520
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calceval.ml" 44 1411 1417 "calceval.ml" 44 1411 1420
+)
+"calceval.ml" 45 1497 1521 "calceval.ml" 45 1497 1524
+type(
+  string
+)
+"calceval.ml" 45 1497 1499 "calceval.ml" 45 1497 1524
+call(
+  stack
+)
+type(
+  unit
+)
+"calceval.ml" 46 1526 1532 "calceval.ml" 46 1526 1536
+type(
+  string -> data_t -> unit
+)
+ident(
+  def help "calceval.ml" 50 1649 1651 "calceval.ml" 54 1787 1808
+)
+"calceval.ml" 46 1526 1537 "calceval.ml" 46 1526 1542
+type(
+  string
+)
+ident(
+  def vname "calceval.ml" 46 1526 1543 "calceval.ml" 48 1613 1643
+)
+"calceval.ml" 46 1526 1543 "calceval.ml" 46 1526 1548
+type(
+  data_t
+)
+ident(
+  def vdata "calceval.ml" 47 1551 1555 "calceval.ml" 48 1613 1643
+)
+"calceval.ml" 47 1551 1559 "calceval.ml" 47 1551 1562
+type(
+  string
+)
+ident(
+  def str "calceval.ml" 48 1613 1617 "calceval.ml" 48 1613 1642
+)
+"calceval.ml" 47 1551 1565 "calceval.ml" 47 1551 1572
+type(
+  (string -> string -> string, unit, string) format ->
+  string -> string -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 47 1551 1573 "calceval.ml" 47 1551 1583
+type(
+  (string -> string -> string, unit, string) format
+)
+"calceval.ml" 47 1551 1584 "calceval.ml" 47 1551 1589
+type(
+  string
+)
+ident(
+  int_ref vname "calceval.ml" 46 1526 1537 "calceval.ml" 46 1526 1542
+)
+"calceval.ml" 47 1551 1591 "calceval.ml" 47 1551 1602
+type(
+  data_t -> string
+)
+ident(
+  int_ref data_string "calceval.ml" 25 687 695 "calceval.ml" 25 687 706
+)
+"calceval.ml" 47 1551 1603 "calceval.ml" 47 1551 1608
+type(
+  data_t
+)
+ident(
+  int_ref vdata "calceval.ml" 46 1526 1543 "calceval.ml" 46 1526 1548
+)
+"calceval.ml" 47 1551 1590 "calceval.ml" 47 1551 1609
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 47 1551 1565 "calceval.ml" 47 1551 1609
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 48 1613 1617 "calceval.ml" 48 1613 1634
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  int_ref Buffer.add_string "buffer.mli" 108 4464 4464 "buffer.mli" 108 4464 4500
+)
+"calceval.ml" 48 1613 1635 "calceval.ml" 48 1613 1638
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calceval.ml" 44 1411 1417 "calceval.ml" 44 1411 1420
+)
+"calceval.ml" 48 1613 1639 "calceval.ml" 48 1613 1642
+type(
+  string
+)
+ident(
+  int_ref str "calceval.ml" 47 1551 1559 "calceval.ml" 47 1551 1562
+)
+"calceval.ml" 48 1613 1617 "calceval.ml" 48 1613 1642
+call(
+  tail
+)
+type(
+  unit
+)
+"calceval.ml" 47 1551 1555 "calceval.ml" 48 1613 1643
+type(
+  unit
+)
+"calceval.ml" 50 1649 1651 "calceval.ml" 50 1649 1662
+type(
+  (Varmap.key -> data_t -> unit) -> data_t Varmap.t -> unit
+)
+ident(
+  int_ref Varmap.iter "map.mli" 150 6342 6346 "map.mli" 150 6342 6391
+)
+"calceval.ml" 50 1649 1663 "calceval.ml" 50 1649 1667
+type(
+  Varmap.key -> data_t -> unit
+)
+ident(
+  int_ref help "calceval.ml" 46 1526 1532 "calceval.ml" 46 1526 1536
+)
+"calceval.ml" 50 1649 1668 "calceval.ml" 50 1649 1674
+type(
+  varmap_t
+)
+ident(
+  int_ref varmap "calceval.ml" 43 1384 1402 "calceval.ml" 43 1384 1408
+)
+"calceval.ml" 50 1649 1651 "calceval.ml" 50 1649 1674
+call(
+  stack
+)
+type(
+  unit
+)
+"calceval.ml" 51 1676 1681 "calceval.ml" 51 1676 1687
+type(
+  varmap_t
+)
+ident(
+  int_ref varmap "calceval.ml" 43 1384 1402 "calceval.ml" 43 1384 1408
+)
+"calceval.ml" 51 1676 1688 "calceval.ml" 51 1676 1690
+type(
+  varmap_t -> varmap_t -> bool
+)
+ident(
+  int_ref Pervasives.( <> ) "pervasives.mli" 60 2574 2574 "pervasives.mli" 60 2574 2622
+)
+"calceval.ml" 51 1676 1691 "calceval.ml" 51 1676 1703
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref Varmap.empty "map.mli" 70 2829 2833 "map.mli" 70 2829 2848
+)
+"calceval.ml" 51 1676 1681 "calceval.ml" 51 1676 1703
+type(
+  bool
+)
+"calceval.ml" 52 1709 1713 "calceval.ml" 52 1709 1728
+type(
+  Buffer.t -> int -> unit
+)
+ident(
+  int_ref Buffer.truncate "buffer.mli" 155 6622 6622 "buffer.mli" 155 6622 6653
+)
+"calceval.ml" 52 1709 1729 "calceval.ml" 52 1709 1732
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calceval.ml" 44 1411 1417 "calceval.ml" 44 1411 1420
+)
+"calceval.ml" 52 1709 1735 "calceval.ml" 52 1709 1748
+type(
+  Buffer.t -> int
+)
+ident(
+  int_ref Buffer.length "buffer.mli" 72 3238 3238 "buffer.mli" 72 3238 3259
+)
+"calceval.ml" 52 1709 1749 "calceval.ml" 52 1709 1752
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calceval.ml" 44 1411 1417 "calceval.ml" 44 1411 1420
+)
+"calceval.ml" 52 1709 1734 "calceval.ml" 52 1709 1753
+call(
+  stack
+)
+type(
+  int
+)
+"calceval.ml" 52 1709 1753 "calceval.ml" 52 1709 1754
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Pervasives.( - ) "pervasives.mli" 265 10396 10396 "pervasives.mli" 265 10396 10442
+)
+"calceval.ml" 52 1709 1754 "calceval.ml" 52 1709 1755
+type(
+  int
+)
+"calceval.ml" 52 1709 1733 "calceval.ml" 52 1709 1756
+type(
+  int
+)
+"calceval.ml" 52 1709 1713 "calceval.ml" 52 1709 1756
+call(
+  stack
+)
+type(
+  unit
+)
+"calceval.ml" 51 1676 1678 "calceval.ml" 52 1709 1756
+type(
+  unit
+)
+"calceval.ml" 53 1758 1760 "calceval.ml" 53 1758 1777
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  int_ref Buffer.add_string "buffer.mli" 108 4464 4464 "buffer.mli" 108 4464 4500
+)
+"calceval.ml" 53 1758 1778 "calceval.ml" 53 1758 1781
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calceval.ml" 44 1411 1417 "calceval.ml" 44 1411 1420
+)
+"calceval.ml" 53 1758 1782 "calceval.ml" 53 1758 1785
+type(
+  string
+)
+"calceval.ml" 53 1758 1760 "calceval.ml" 53 1758 1785
+call(
+  stack
+)
+type(
+  unit
+)
+"calceval.ml" 54 1787 1789 "calceval.ml" 54 1787 1804
+type(
+  Buffer.t -> string
+)
+ident(
+  int_ref Buffer.contents "buffer.mli" 41 2156 2156 "buffer.mli" 41 2156 2182
+)
+"calceval.ml" 54 1787 1805 "calceval.ml" 54 1787 1808
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calceval.ml" 44 1411 1417 "calceval.ml" 44 1411 1420
+)
+"calceval.ml" 54 1787 1789 "calceval.ml" 54 1787 1808
+call(
+  tail
+)
+type(
+  string
+)
+"calceval.ml" 53 1758 1760 "calceval.ml" 54 1787 1808
+type(
+  string
+)
+"calceval.ml" 51 1676 1678 "calceval.ml" 54 1787 1808
+type(
+  string
+)
+"calceval.ml" 50 1649 1651 "calceval.ml" 54 1787 1808
+type(
+  string
+)
+"calceval.ml" 46 1526 1528 "calceval.ml" 54 1787 1808
+type(
+  string
+)
+"calceval.ml" 45 1497 1499 "calceval.ml" 54 1787 1808
+type(
+  string
+)
+"calceval.ml" 44 1411 1413 "calceval.ml" 54 1787 1808
+type(
+  string
+)
+"calceval.ml" 67 2112 2116 "calceval.ml" 67 2112 2126
+type(
+  string -> varmap_t -> Calcparse.expr -> exn
+)
+ident(
+  def eval_error "calceval.ml" 76 2473 2473 "calceval.ml" 1 0 -1
+)
+"calceval.ml" 67 2112 2127 "calceval.ml" 67 2112 2130
+type(
+  string
+)
+ident(
+  def msg "calceval.ml" 67 2112 2131 "calceval.ml" 70 2209 2267
+)
+"calceval.ml" 67 2112 2131 "calceval.ml" 67 2112 2137
+type(
+  varmap_t
+)
+ident(
+  def varmap "calceval.ml" 67 2112 2138 "calceval.ml" 70 2209 2267
+)
+"calceval.ml" 67 2112 2138 "calceval.ml" 67 2112 2142
+type(
+  Calcparse.expr
+)
+ident(
+  def expr "calceval.ml" 68 2145 2147 "calceval.ml" 70 2209 2267
+)
+"calceval.ml" 68 2145 2163 "calceval.ml" 68 2145 2166
+type(
+  string
+)
+ident(
+  int_ref msg "calceval.ml" 67 2112 2127 "calceval.ml" 67 2112 2130
+)
+"calceval.ml" 69 2168 2187 "calceval.ml" 69 2168 2200
+type(
+  varmap_t -> string
+)
+ident(
+  int_ref varmap_string "calceval.ml" 43 1384 1388 "calceval.ml" 43 1384 1401
+)
+"calceval.ml" 69 2168 2201 "calceval.ml" 69 2168 2207
+type(
+  varmap_t
+)
+ident(
+  int_ref varmap "calceval.ml" 67 2112 2131 "calceval.ml" 67 2112 2137
+)
+"calceval.ml" 69 2168 2187 "calceval.ml" 69 2168 2207
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 70 2209 2226 "calceval.ml" 70 2209 2230
+type(
+  string
+)
+"calceval.ml" 70 2209 2230 "calceval.ml" 70 2209 2231
+type(
+  string -> string -> string
+)
+ident(
+  int_ref Pervasives.( ^ ) "pervasives.mli" 572 22042 22042 "pervasives.mli" 572 22042 22080
+)
+"calceval.ml" 70 2209 2232 "calceval.ml" 70 2209 2258
+type(
+  Calcparse.expr -> string
+)
+ident(
+  int_ref Calcparse.parsetree_string "calcparse.ml" 52 1789 1793 "calcparse.ml" 52 1789 1809
+)
+"calceval.ml" 70 2209 2259 "calceval.ml" 70 2209 2263
+type(
+  Calcparse.expr
+)
+ident(
+  int_ref expr "calceval.ml" 67 2112 2138 "calceval.ml" 67 2112 2142
+)
+"calceval.ml" 70 2209 2231 "calceval.ml" 70 2209 2264
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 70 2209 2226 "calceval.ml" 70 2209 2264
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 68 2145 2156 "calceval.ml" 70 2209 2267
+type(
+  EvalError
+)
+"calceval.ml" 68 2145 2147 "calceval.ml" 70 2209 2267
+type(
+  exn
+)
+"calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  def eval_expr "calceval.ml" 76 2473 2473 "calceval.ml" 1 0 -1
+)
+"calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+type(
+  data_t Varmap.t
+)
+ident(
+  def varmap "calceval.ml" 76 2473 2498 "calceval.ml" 167 7402 7410
+)
+"calceval.ml" 76 2473 2498 "calceval.ml" 76 2473 2502
+type(
+  Calcparse.expr
+)
+ident(
+  def expr "calceval.ml" 77 2505 2507 "calceval.ml" 167 7402 7410
+)
+"calceval.ml" 77 2505 2513 "calceval.ml" 77 2505 2517
+type(
+  Calcparse.expr
+)
+ident(
+  int_ref expr "calceval.ml" 76 2473 2498 "calceval.ml" 76 2473 2502
+)
+"calceval.ml" 78 2523 2534 "calceval.ml" 78 2523 2535
+type(
+  int
+)
+ident(
+  def i "calceval.ml" 78 2523 2539 "calceval.ml" 78 2523 2547
+)
+"calceval.ml" 78 2523 2527 "calceval.ml" 78 2523 2535
+type(
+  Calcparse.expr
+)
+"calceval.ml" 78 2523 2546 "calceval.ml" 78 2523 2547
+type(
+  int
+)
+ident(
+  int_ref i "calceval.ml" 78 2523 2534 "calceval.ml" 78 2523 2535
+)
+"calceval.ml" 78 2523 2539 "calceval.ml" 78 2523 2547
+type(
+  data_t
+)
+"calceval.ml" 80 2629 2641 "calceval.ml" 80 2629 2642
+type(
+  bool
+)
+ident(
+  def b "calceval.ml" 80 2629 2646 "calceval.ml" 80 2629 2655
+)
+"calceval.ml" 80 2629 2633 "calceval.ml" 80 2629 2642
+type(
+  Calcparse.expr
+)
+"calceval.ml" 80 2629 2654 "calceval.ml" 80 2629 2655
+type(
+  bool
+)
+ident(
+  int_ref b "calceval.ml" 80 2629 2641 "calceval.ml" 80 2629 2642
+)
+"calceval.ml" 80 2629 2646 "calceval.ml" 80 2629 2655
+type(
+  data_t
+)
+"calceval.ml" 82 2657 2669 "calceval.ml" 82 2657 2676
+type(
+  string
+)
+ident(
+  def varname "calceval.ml" 83 2760 2765 "calceval.ml" 89 2967 2975
+)
+"calceval.ml" 82 2657 2661 "calceval.ml" 82 2657 2676
+type(
+  Calcparse.expr
+)
+"calceval.ml" 84 2771 2784 "calceval.ml" 84 2771 2799
+type(
+  Varmap.key -> data_t Varmap.t -> data_t option
+)
+ident(
+  int_ref Varmap.find_opt "map.mli" 258 10316 10320 "map.mli" 258 10316 10358
+)
+"calceval.ml" 84 2771 2800 "calceval.ml" 84 2771 2807
+type(
+  Varmap.key
+)
+ident(
+  int_ref varname "calceval.ml" 82 2657 2669 "calceval.ml" 82 2657 2676
+)
+"calceval.ml" 84 2771 2808 "calceval.ml" 84 2771 2814
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 84 2771 2784 "calceval.ml" 84 2771 2814
+call(
+  stack
+)
+type(
+  data_t option
+)
+"calceval.ml" 85 2820 2834 "calceval.ml" 85 2820 2835
+type(
+  data_t
+)
+ident(
+  def d "calceval.ml" 85 2820 2839 "calceval.ml" 85 2820 2840
+)
+"calceval.ml" 85 2820 2829 "calceval.ml" 85 2820 2835
+type(
+  data_t option
+)
+"calceval.ml" 85 2820 2839 "calceval.ml" 85 2820 2840
+type(
+  data_t
+)
+ident(
+  int_ref d "calceval.ml" 85 2820 2834 "calceval.ml" 85 2820 2835
+)
+"calceval.ml" 86 2841 2850 "calceval.ml" 86 2841 2854
+type(
+  data_t option
+)
+"calceval.ml" 87 2858 2872 "calceval.ml" 87 2858 2875
+type(
+  string
+)
+ident(
+  def msg "calceval.ml" 88 2922 2932 "calceval.ml" 88 2922 2966
+)
+"calceval.ml" 87 2858 2878 "calceval.ml" 87 2858 2885
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 87 2858 2886 "calceval.ml" 87 2858 2910
+type(
+  (string -> string, unit, string) format
+)
+"calceval.ml" 87 2858 2911 "calceval.ml" 87 2858 2918
+type(
+  string
+)
+ident(
+  int_ref varname "calceval.ml" 82 2657 2669 "calceval.ml" 82 2657 2676
+)
+"calceval.ml" 87 2858 2878 "calceval.ml" 87 2858 2918
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 88 2922 2932 "calceval.ml" 88 2922 2937
+type(
+  exn -> data_t
+)
+ident(
+  int_ref Pervasives.raise "pervasives.mli" 30 1530 1530 "pervasives.mli" 30 1530 1567
+)
+"calceval.ml" 88 2922 2939 "calceval.ml" 88 2922 2949
+type(
+  string -> varmap_t -> Calcparse.expr -> exn
+)
+ident(
+  int_ref eval_error "calceval.ml" 67 2112 2116 "calceval.ml" 67 2112 2126
+)
+"calceval.ml" 88 2922 2950 "calceval.ml" 88 2922 2953
+type(
+  string
+)
+ident(
+  int_ref msg "calceval.ml" 87 2858 2872 "calceval.ml" 87 2858 2875
+)
+"calceval.ml" 88 2922 2954 "calceval.ml" 88 2922 2960
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 88 2922 2961 "calceval.ml" 88 2922 2965
+type(
+  Calcparse.expr
+)
+ident(
+  int_ref expr "calceval.ml" 76 2473 2498 "calceval.ml" 76 2473 2502
+)
+"calceval.ml" 88 2922 2938 "calceval.ml" 88 2922 2966
+call(
+  stack
+)
+type(
+  exn
+)
+"calceval.ml" 88 2922 2932 "calceval.ml" 88 2922 2966
+type(
+  data_t
+)
+"calceval.ml" 87 2858 2868 "calceval.ml" 88 2922 2966
+type(
+  data_t
+)
+"calceval.ml" 83 2760 2765 "calceval.ml" 89 2967 2975
+type(
+  data_t
+)
+"calceval.ml" 91 2977 2987 "calceval.ml" 91 2977 2988
+ident(
+  def o "calceval.ml" 92 3084 3089 "calceval.ml" 113 3937 3944
+)
+"calceval.ml" 91 2977 2986 "calceval.ml" 91 2977 2989
+type(
+  Calcparse.expr.Intop
+)
+"calceval.ml" 91 2977 2981 "calceval.ml" 91 2977 2989
+type(
+  Calcparse.expr
+)
+"calceval.ml" 93 3095 3105 "calceval.ml" 93 3095 3110
+type(
+  data_t
+)
+ident(
+  def ldata "calceval.ml" 94 3141 3147 "calceval.ml" 112 3893 3936
+)
+"calceval.ml" 93 3095 3113 "calceval.ml" 93 3095 3122
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 93 3095 3123 "calceval.ml" 93 3095 3129
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 93 3095 3130 "calceval.ml" 93 3095 3131
+type(
+  Calcparse.expr.Intop
+)
+ident(
+  int_ref o "calceval.ml" 91 2977 2986 "calceval.ml" 91 2977 2989
+)
+"calceval.ml" 93 3095 3130 "calceval.ml" 93 3095 3137
+type(
+  Calcparse.expr
+)
+"calceval.ml" 93 3095 3113 "calceval.ml" 93 3095 3137
+call(
+  stack
+)
+type(
+  data_t
+)
+"calceval.ml" 94 3141 3151 "calceval.ml" 94 3141 3156
+type(
+  data_t
+)
+ident(
+  def rdata "calceval.ml" 95 3187 3193 "calceval.ml" 112 3893 3936
+)
+"calceval.ml" 94 3141 3159 "calceval.ml" 94 3141 3168
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 94 3141 3169 "calceval.ml" 94 3141 3175
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 94 3141 3176 "calceval.ml" 94 3141 3177
+type(
+  Calcparse.expr.Intop
+)
+ident(
+  int_ref o "calceval.ml" 91 2977 2986 "calceval.ml" 91 2977 2989
+)
+"calceval.ml" 94 3141 3176 "calceval.ml" 94 3141 3183
+type(
+  Calcparse.expr
+)
+"calceval.ml" 94 3141 3159 "calceval.ml" 94 3141 3183
+call(
+  stack
+)
+type(
+  data_t
+)
+"calceval.ml" 95 3187 3199 "calceval.ml" 95 3187 3204
+type(
+  data_t
+)
+ident(
+  int_ref ldata "calceval.ml" 93 3095 3105 "calceval.ml" 93 3095 3110
+)
+"calceval.ml" 95 3187 3205 "calceval.ml" 95 3187 3210
+type(
+  data_t
+)
+ident(
+  int_ref rdata "calceval.ml" 94 3141 3151 "calceval.ml" 94 3141 3156
+)
+"calceval.ml" 95 3187 3199 "calceval.ml" 95 3187 3210
+type(
+  data_t * data_t
+)
+"calceval.ml" 96 3216 3232 "calceval.ml" 96 3216 3234
+type(
+  int
+)
+ident(
+  def li "calceval.ml" 97 3251 3260 "calceval.ml" 106 3579 3590
+)
+"calceval.ml" 96 3216 3224 "calceval.ml" 96 3216 3235
+type(
+  data_t
+)
+"calceval.ml" 96 3216 3244 "calceval.ml" 96 3216 3246
+type(
+  int
+)
+ident(
+  def ri "calceval.ml" 97 3251 3260 "calceval.ml" 106 3579 3590
+)
+"calceval.ml" 96 3216 3236 "calceval.ml" 96 3216 3247
+type(
+  data_t
+)
+"calceval.ml" 96 3216 3224 "calceval.ml" 96 3216 3247
+type(
+  data_t * data_t
+)
+"calceval.ml" 98 3266 3282 "calceval.ml" 98 3266 3283
+type(
+  Calcparse.expr.Intop
+)
+ident(
+  int_ref o "calceval.ml" 91 2977 2986 "calceval.ml" 91 2977 2989
+)
+"calceval.ml" 98 3266 3282 "calceval.ml" 98 3266 3286
+type(
+  Calcparse.intop
+)
+"calceval.ml" 99 3292 3304 "calceval.ml" 99 3292 3307
+type(
+  Calcparse.intop
+)
+"calceval.ml" 99 3292 3324 "calceval.ml" 99 3292 3326
+type(
+  int
+)
+ident(
+  int_ref li "calceval.ml" 96 3216 3232 "calceval.ml" 96 3216 3234
+)
+"calceval.ml" 99 3292 3327 "calceval.ml" 99 3292 3328
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Pervasives.( + ) "pervasives.mli" 261 10267 10267 "pervasives.mli" 261 10267 10313
+)
+"calceval.ml" 99 3292 3329 "calceval.ml" 99 3292 3331
+type(
+  int
+)
+ident(
+  int_ref ri "calceval.ml" 96 3216 3244 "calceval.ml" 96 3216 3246
+)
+"calceval.ml" 99 3292 3323 "calceval.ml" 99 3292 3332
+type(
+  int
+)
+"calceval.ml" 99 3292 3315 "calceval.ml" 99 3292 3332
+type(
+  data_t
+)
+"calceval.ml" 100 3333 3345 "calceval.ml" 100 3333 3348
+type(
+  Calcparse.intop
+)
+"calceval.ml" 100 3333 3365 "calceval.ml" 100 3333 3367
+type(
+  int
+)
+ident(
+  int_ref li "calceval.ml" 96 3216 3232 "calceval.ml" 96 3216 3234
+)
+"calceval.ml" 100 3333 3368 "calceval.ml" 100 3333 3369
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Pervasives.( - ) "pervasives.mli" 265 10396 10396 "pervasives.mli" 265 10396 10442
+)
+"calceval.ml" 100 3333 3370 "calceval.ml" 100 3333 3372
+type(
+  int
+)
+ident(
+  int_ref ri "calceval.ml" 96 3216 3244 "calceval.ml" 96 3216 3246
+)
+"calceval.ml" 100 3333 3364 "calceval.ml" 100 3333 3373
+type(
+  int
+)
+"calceval.ml" 100 3333 3356 "calceval.ml" 100 3333 3373
+type(
+  data_t
+)
+"calceval.ml" 101 3374 3386 "calceval.ml" 101 3374 3389
+type(
+  Calcparse.intop
+)
+"calceval.ml" 101 3374 3406 "calceval.ml" 101 3374 3408
+type(
+  int
+)
+ident(
+  int_ref li "calceval.ml" 96 3216 3232 "calceval.ml" 96 3216 3234
+)
+"calceval.ml" 101 3374 3409 "calceval.ml" 101 3374 3410
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Pervasives.( * ) "pervasives.mli" 269 10528 10528 "pervasives.mli" 269 10528 10574
+)
+"calceval.ml" 101 3374 3411 "calceval.ml" 101 3374 3413
+type(
+  int
+)
+ident(
+  int_ref ri "calceval.ml" 96 3216 3244 "calceval.ml" 96 3216 3246
+)
+"calceval.ml" 101 3374 3405 "calceval.ml" 101 3374 3414
+type(
+  int
+)
+"calceval.ml" 101 3374 3397 "calceval.ml" 101 3374 3414
+type(
+  data_t
+)
+"calceval.ml" 102 3415 3427 "calceval.ml" 102 3415 3430
+type(
+  Calcparse.intop
+)
+"calceval.ml" 102 3415 3447 "calceval.ml" 102 3415 3449
+type(
+  int
+)
+ident(
+  int_ref li "calceval.ml" 96 3216 3232 "calceval.ml" 96 3216 3234
+)
+"calceval.ml" 102 3415 3450 "calceval.ml" 102 3415 3451
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Pervasives.( / ) "pervasives.mli" 273 10663 10663 "pervasives.mli" 273 10663 10709
+)
+"calceval.ml" 102 3415 3452 "calceval.ml" 102 3415 3454
+type(
+  int
+)
+ident(
+  int_ref ri "calceval.ml" 96 3216 3244 "calceval.ml" 96 3216 3246
+)
+"calceval.ml" 102 3415 3446 "calceval.ml" 102 3415 3455
+type(
+  int
+)
+"calceval.ml" 102 3415 3438 "calceval.ml" 102 3415 3455
+type(
+  data_t
+)
+"calceval.ml" 103 3456 3468 "calceval.ml" 103 3456 3472
+type(
+  Calcparse.intop
+)
+"calceval.ml" 103 3456 3488 "calceval.ml" 103 3456 3490
+type(
+  int
+)
+ident(
+  int_ref li "calceval.ml" 96 3216 3232 "calceval.ml" 96 3216 3234
+)
+"calceval.ml" 103 3456 3491 "calceval.ml" 103 3456 3492
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Pervasives.( < ) "pervasives.mli" 64 2720 2720 "pervasives.mli" 64 2720 2767
+)
+"calceval.ml" 103 3456 3493 "calceval.ml" 103 3456 3495
+type(
+  int
+)
+ident(
+  int_ref ri "calceval.ml" 96 3216 3244 "calceval.ml" 96 3216 3246
+)
+"calceval.ml" 103 3456 3487 "calceval.ml" 103 3456 3496
+type(
+  bool
+)
+"calceval.ml" 103 3456 3479 "calceval.ml" 103 3456 3496
+type(
+  data_t
+)
+"calceval.ml" 104 3497 3509 "calceval.ml" 104 3497 3516
+type(
+  Calcparse.intop
+)
+"calceval.ml" 104 3497 3529 "calceval.ml" 104 3497 3531
+type(
+  int
+)
+ident(
+  int_ref li "calceval.ml" 96 3216 3232 "calceval.ml" 96 3216 3234
+)
+"calceval.ml" 104 3497 3532 "calceval.ml" 104 3497 3533
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Pervasives.( > ) "pervasives.mli" 68 2858 2858 "pervasives.mli" 68 2858 2908
+)
+"calceval.ml" 104 3497 3534 "calceval.ml" 104 3497 3536
+type(
+  int
+)
+ident(
+  int_ref ri "calceval.ml" 96 3216 3244 "calceval.ml" 96 3216 3246
+)
+"calceval.ml" 104 3497 3528 "calceval.ml" 104 3497 3537
+type(
+  bool
+)
+"calceval.ml" 104 3497 3520 "calceval.ml" 104 3497 3537
+type(
+  data_t
+)
+"calceval.ml" 105 3538 3550 "calceval.ml" 105 3538 3555
+type(
+  Calcparse.intop
+)
+"calceval.ml" 105 3538 3570 "calceval.ml" 105 3538 3572
+type(
+  int
+)
+ident(
+  int_ref li "calceval.ml" 96 3216 3232 "calceval.ml" 96 3216 3234
+)
+"calceval.ml" 105 3538 3573 "calceval.ml" 105 3538 3574
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Pervasives.( = ) "pervasives.mli" 51 2086 2086 "pervasives.mli" 51 2086 2130
+)
+"calceval.ml" 105 3538 3575 "calceval.ml" 105 3538 3577
+type(
+  int
+)
+ident(
+  int_ref ri "calceval.ml" 96 3216 3244 "calceval.ml" 96 3216 3246
+)
+"calceval.ml" 105 3538 3569 "calceval.ml" 105 3538 3578
+type(
+  bool
+)
+"calceval.ml" 105 3538 3561 "calceval.ml" 105 3538 3578
+type(
+  data_t
+)
+"calceval.ml" 97 3251 3260 "calceval.ml" 106 3579 3590
+type(
+  data_t
+)
+"calceval.ml" 107 3591 3607 "calceval.ml" 107 3591 3609
+type(
+  int
+)
+ident(
+  def li "calceval.ml" 108 3619 3628 "calceval.ml" 109 3725 3768
+)
+"calceval.ml" 107 3591 3599 "calceval.ml" 107 3591 3610
+type(
+  data_t
+)
+"calceval.ml" 107 3591 3611 "calceval.ml" 107 3591 3615
+type(
+  data_t
+)
+ident(
+  def rerr "calceval.ml" 108 3619 3628 "calceval.ml" 109 3725 3768
+)
+"calceval.ml" 107 3591 3599 "calceval.ml" 107 3591 3615
+type(
+  data_t * data_t
+)
+"calceval.ml" 108 3619 3632 "calceval.ml" 108 3619 3635
+type(
+  string
+)
+ident(
+  def msg "calceval.ml" 109 3725 3734 "calceval.ml" 109 3725 3768
+)
+"calceval.ml" 108 3619 3638 "calceval.ml" 108 3619 3645
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 108 3619 3646 "calceval.ml" 108 3619 3702
+type(
+  (string -> string, unit, string) format
+)
+"calceval.ml" 108 3619 3704 "calceval.ml" 108 3619 3715
+type(
+  data_t -> string
+)
+ident(
+  int_ref data_string "calceval.ml" 25 687 695 "calceval.ml" 25 687 706
+)
+"calceval.ml" 108 3619 3716 "calceval.ml" 108 3619 3720
+type(
+  data_t
+)
+ident(
+  int_ref rerr "calceval.ml" 107 3591 3611 "calceval.ml" 107 3591 3615
+)
+"calceval.ml" 108 3619 3703 "calceval.ml" 108 3619 3721
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 108 3619 3638 "calceval.ml" 108 3619 3721
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 109 3725 3734 "calceval.ml" 109 3725 3739
+type(
+  exn -> data_t
+)
+ident(
+  int_ref Pervasives.raise "pervasives.mli" 30 1530 1530 "pervasives.mli" 30 1530 1567
+)
+"calceval.ml" 109 3725 3741 "calceval.ml" 109 3725 3751
+type(
+  string -> varmap_t -> Calcparse.expr -> exn
+)
+ident(
+  int_ref eval_error "calceval.ml" 67 2112 2116 "calceval.ml" 67 2112 2126
+)
+"calceval.ml" 109 3725 3752 "calceval.ml" 109 3725 3755
+type(
+  string
+)
+ident(
+  int_ref msg "calceval.ml" 108 3619 3632 "calceval.ml" 108 3619 3635
+)
+"calceval.ml" 109 3725 3756 "calceval.ml" 109 3725 3762
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 109 3725 3763 "calceval.ml" 109 3725 3767
+type(
+  Calcparse.expr
+)
+ident(
+  int_ref expr "calceval.ml" 76 2473 2498 "calceval.ml" 76 2473 2502
+)
+"calceval.ml" 109 3725 3740 "calceval.ml" 109 3725 3768
+call(
+  stack
+)
+type(
+  exn
+)
+"calceval.ml" 109 3725 3734 "calceval.ml" 109 3725 3768
+type(
+  data_t
+)
+"calceval.ml" 108 3619 3628 "calceval.ml" 109 3725 3768
+type(
+  data_t
+)
+"calceval.ml" 110 3769 3777 "calceval.ml" 110 3769 3781
+type(
+  data_t
+)
+ident(
+  def lerr "calceval.ml" 111 3787 3796 "calceval.ml" 112 3893 3936
+)
+"calceval.ml" 110 3769 3782 "calceval.ml" 110 3769 3783
+type(
+  data_t
+)
+"calceval.ml" 110 3769 3777 "calceval.ml" 110 3769 3783
+type(
+  data_t * data_t
+)
+"calceval.ml" 111 3787 3800 "calceval.ml" 111 3787 3803
+type(
+  string
+)
+ident(
+  def msg "calceval.ml" 112 3893 3902 "calceval.ml" 112 3893 3936
+)
+"calceval.ml" 111 3787 3806 "calceval.ml" 111 3787 3813
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 111 3787 3814 "calceval.ml" 111 3787 3870
+type(
+  (string -> string, unit, string) format
+)
+"calceval.ml" 111 3787 3872 "calceval.ml" 111 3787 3883
+type(
+  data_t -> string
+)
+ident(
+  int_ref data_string "calceval.ml" 25 687 695 "calceval.ml" 25 687 706
+)
+"calceval.ml" 111 3787 3884 "calceval.ml" 111 3787 3888
+type(
+  data_t
+)
+ident(
+  int_ref lerr "calceval.ml" 110 3769 3777 "calceval.ml" 110 3769 3781
+)
+"calceval.ml" 111 3787 3871 "calceval.ml" 111 3787 3889
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 111 3787 3806 "calceval.ml" 111 3787 3889
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 112 3893 3902 "calceval.ml" 112 3893 3907
+type(
+  exn -> data_t
+)
+ident(
+  int_ref Pervasives.raise "pervasives.mli" 30 1530 1530 "pervasives.mli" 30 1530 1567
+)
+"calceval.ml" 112 3893 3909 "calceval.ml" 112 3893 3919
+type(
+  string -> varmap_t -> Calcparse.expr -> exn
+)
+ident(
+  int_ref eval_error "calceval.ml" 67 2112 2116 "calceval.ml" 67 2112 2126
+)
+"calceval.ml" 112 3893 3920 "calceval.ml" 112 3893 3923
+type(
+  string
+)
+ident(
+  int_ref msg "calceval.ml" 111 3787 3800 "calceval.ml" 111 3787 3803
+)
+"calceval.ml" 112 3893 3924 "calceval.ml" 112 3893 3930
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 112 3893 3931 "calceval.ml" 112 3893 3935
+type(
+  Calcparse.expr
+)
+ident(
+  int_ref expr "calceval.ml" 76 2473 2498 "calceval.ml" 76 2473 2502
+)
+"calceval.ml" 112 3893 3908 "calceval.ml" 112 3893 3936
+call(
+  stack
+)
+type(
+  exn
+)
+"calceval.ml" 112 3893 3902 "calceval.ml" 112 3893 3936
+type(
+  data_t
+)
+"calceval.ml" 111 3787 3796 "calceval.ml" 112 3893 3936
+type(
+  data_t
+)
+"calceval.ml" 95 3187 3193 "calceval.ml" 112 3893 3936
+type(
+  data_t
+)
+"calceval.ml" 94 3141 3147 "calceval.ml" 112 3893 3936
+type(
+  data_t
+)
+"calceval.ml" 92 3084 3089 "calceval.ml" 113 3937 3944
+type(
+  data_t
+)
+"calceval.ml" 115 3946 3957 "calceval.ml" 115 3946 3958
+ident(
+  def o "calceval.ml" 116 4040 4045 "calceval.ml" 118 4209 4217
+)
+"calceval.ml" 115 3946 3956 "calceval.ml" 115 3946 3959
+type(
+  Calcparse.expr.Boolop
+)
+"calceval.ml" 115 3946 3950 "calceval.ml" 115 3946 3959
+type(
+  Calcparse.expr
+)
+"calceval.ml" 117 4129 4136 "calceval.ml" 117 4129 4141
+type(
+  exn -> data_t
+)
+ident(
+  int_ref Pervasives.raise "pervasives.mli" 30 1530 1530 "pervasives.mli" 30 1530 1567
+)
+"calceval.ml" 117 4129 4143 "calceval.ml" 117 4129 4153
+type(
+  string -> varmap_t -> Calcparse.expr -> exn
+)
+ident(
+  int_ref eval_error "calceval.ml" 67 2112 2116 "calceval.ml" 67 2112 2126
+)
+"calceval.ml" 117 4129 4154 "calceval.ml" 117 4129 4195
+type(
+  string
+)
+"calceval.ml" 117 4129 4196 "calceval.ml" 117 4129 4202
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 117 4129 4203 "calceval.ml" 117 4129 4207
+type(
+  Calcparse.expr
+)
+ident(
+  int_ref expr "calceval.ml" 76 2473 2498 "calceval.ml" 76 2473 2502
+)
+"calceval.ml" 117 4129 4142 "calceval.ml" 117 4129 4208
+call(
+  stack
+)
+type(
+  exn
+)
+"calceval.ml" 116 4040 4045 "calceval.ml" 118 4209 4217
+type(
+  data_t
+)
+"calceval.ml" 120 4219 4228 "calceval.ml" 120 4219 4229
+ident(
+  def c "calceval.ml" 121 4321 4326 "calceval.ml" 133 5085 5093
+)
+"calceval.ml" 120 4219 4227 "calceval.ml" 120 4219 4230
+type(
+  Calcparse.expr.Cond
+)
+"calceval.ml" 120 4219 4223 "calceval.ml" 120 4219 4230
+type(
+  Calcparse.expr
+)
+"calceval.ml" 122 4332 4343 "calceval.ml" 122 4332 4344
+type(
+  data_t
+)
+ident(
+  def b "calceval.ml" 123 4412 4419 "calceval.ml" 132 5042 5084
+)
+"calceval.ml" 122 4332 4347 "calceval.ml" 122 4332 4356
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 122 4332 4357 "calceval.ml" 122 4332 4363
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 122 4332 4364 "calceval.ml" 122 4332 4365
+type(
+  Calcparse.expr.Cond
+)
+ident(
+  int_ref c "calceval.ml" 120 4219 4227 "calceval.ml" 120 4219 4230
+)
+"calceval.ml" 122 4332 4364 "calceval.ml" 122 4332 4373
+type(
+  Calcparse.expr
+)
+"calceval.ml" 122 4332 4347 "calceval.ml" 122 4332 4373
+call(
+  stack
+)
+type(
+  data_t
+)
+"calceval.ml" 123 4412 4425 "calceval.ml" 123 4412 4426
+type(
+  data_t
+)
+ident(
+  int_ref b "calceval.ml" 122 4332 4343 "calceval.ml" 122 4332 4344
+)
+"calceval.ml" 124 4432 4449 "calceval.ml" 124 4432 4450
+type(
+  bool
+)
+ident(
+  def b "calceval.ml" 125 4527 4535 "calceval.ml" 129 4851 4862
+)
+"calceval.ml" 124 4432 4441 "calceval.ml" 124 4432 4450
+type(
+  data_t
+)
+"calceval.ml" 126 4541 4557 "calceval.ml" 126 4541 4558
+type(
+  bool
+)
+ident(
+  int_ref b "calceval.ml" 124 4432 4449 "calceval.ml" 124 4432 4450
+)
+"calceval.ml" 127 4653 4665 "calceval.ml" 127 4653 4669
+type(
+  bool
+)
+"calceval.ml" 127 4653 4673 "calceval.ml" 127 4653 4682
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 127 4653 4683 "calceval.ml" 127 4653 4689
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 127 4653 4690 "calceval.ml" 127 4653 4691
+type(
+  Calcparse.expr.Cond
+)
+ident(
+  int_ref c "calceval.ml" 120 4219 4227 "calceval.ml" 120 4219 4230
+)
+"calceval.ml" 127 4653 4690 "calceval.ml" 127 4653 4701
+type(
+  Calcparse.expr
+)
+"calceval.ml" 127 4653 4673 "calceval.ml" 127 4653 4701
+call(
+  tail
+)
+type(
+  data_t
+)
+"calceval.ml" 128 4751 4763 "calceval.ml" 128 4751 4768
+type(
+  bool
+)
+"calceval.ml" 128 4751 4772 "calceval.ml" 128 4751 4781
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 128 4751 4782 "calceval.ml" 128 4751 4788
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 128 4751 4789 "calceval.ml" 128 4751 4790
+type(
+  Calcparse.expr.Cond
+)
+ident(
+  int_ref c "calceval.ml" 120 4219 4227 "calceval.ml" 120 4219 4230
+)
+"calceval.ml" 128 4751 4789 "calceval.ml" 128 4751 4800
+type(
+  Calcparse.expr
+)
+"calceval.ml" 128 4751 4772 "calceval.ml" 128 4751 4800
+call(
+  tail
+)
+type(
+  data_t
+)
+"calceval.ml" 125 4527 4535 "calceval.ml" 129 4851 4862
+type(
+  data_t
+)
+"calceval.ml" 130 4863 4872 "calceval.ml" 130 4863 4873
+type(
+  data_t
+)
+"calceval.ml" 131 4877 4889 "calceval.ml" 131 4877 4892
+type(
+  string
+)
+ident(
+  def msg "calceval.ml" 132 5042 5050 "calceval.ml" 132 5042 5084
+)
+"calceval.ml" 131 4877 4895 "calceval.ml" 131 4877 4902
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 131 4877 4903 "calceval.ml" 131 4877 4939
+type(
+  (string -> string, unit, string) format
+)
+"calceval.ml" 131 4877 4941 "calceval.ml" 131 4877 4952
+type(
+  data_t -> string
+)
+ident(
+  int_ref data_string "calceval.ml" 25 687 695 "calceval.ml" 25 687 706
+)
+"calceval.ml" 131 4877 4953 "calceval.ml" 131 4877 4954
+type(
+  data_t
+)
+ident(
+  int_ref b "calceval.ml" 122 4332 4343 "calceval.ml" 122 4332 4344
+)
+"calceval.ml" 131 4877 4940 "calceval.ml" 131 4877 4955
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 131 4877 4895 "calceval.ml" 131 4877 4955
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 132 5042 5050 "calceval.ml" 132 5042 5055
+type(
+  exn -> data_t
+)
+ident(
+  int_ref Pervasives.raise "pervasives.mli" 30 1530 1530 "pervasives.mli" 30 1530 1567
+)
+"calceval.ml" 132 5042 5057 "calceval.ml" 132 5042 5067
+type(
+  string -> varmap_t -> Calcparse.expr -> exn
+)
+ident(
+  int_ref eval_error "calceval.ml" 67 2112 2116 "calceval.ml" 67 2112 2126
+)
+"calceval.ml" 132 5042 5068 "calceval.ml" 132 5042 5071
+type(
+  string
+)
+ident(
+  int_ref msg "calceval.ml" 131 4877 4889 "calceval.ml" 131 4877 4892
+)
+"calceval.ml" 132 5042 5072 "calceval.ml" 132 5042 5078
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 132 5042 5079 "calceval.ml" 132 5042 5083
+type(
+  Calcparse.expr
+)
+ident(
+  int_ref expr "calceval.ml" 76 2473 2498 "calceval.ml" 76 2473 2502
+)
+"calceval.ml" 132 5042 5056 "calceval.ml" 132 5042 5084
+call(
+  stack
+)
+type(
+  exn
+)
+"calceval.ml" 132 5042 5050 "calceval.ml" 132 5042 5084
+type(
+  data_t
+)
+"calceval.ml" 131 4877 4885 "calceval.ml" 132 5042 5084
+type(
+  data_t
+)
+"calceval.ml" 123 4412 4419 "calceval.ml" 132 5042 5084
+type(
+  data_t
+)
+"calceval.ml" 121 4321 4326 "calceval.ml" 133 5085 5093
+type(
+  data_t
+)
+"calceval.ml" 135 5095 5105 "calceval.ml" 135 5095 5106
+ident(
+  def l "calceval.ml" 136 5189 5194 "calceval.ml" 145 5870 5878
+)
+"calceval.ml" 135 5095 5104 "calceval.ml" 135 5095 5107
+type(
+  Calcparse.expr.Letin
+)
+"calceval.ml" 135 5095 5099 "calceval.ml" 135 5095 5107
+type(
+  Calcparse.expr
+)
+"calceval.ml" 137 5200 5211 "calceval.ml" 137 5200 5219
+type(
+  data_t
+)
+ident(
+  def var_data "calceval.ml" 138 5253 5259 "calceval.ml" 143 5832 5868
+)
+"calceval.ml" 137 5200 5222 "calceval.ml" 137 5200 5231
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 137 5200 5232 "calceval.ml" 137 5200 5238
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 137 5200 5239 "calceval.ml" 137 5200 5240
+type(
+  Calcparse.expr.Letin
+)
+ident(
+  int_ref l "calceval.ml" 135 5095 5104 "calceval.ml" 135 5095 5107
+)
+"calceval.ml" 137 5200 5239 "calceval.ml" 137 5200 5249
+type(
+  Calcparse.expr
+)
+"calceval.ml" 137 5200 5222 "calceval.ml" 137 5200 5249
+call(
+  stack
+)
+type(
+  data_t
+)
+"calceval.ml" 138 5253 5265 "calceval.ml" 138 5253 5273
+type(
+  data_t
+)
+ident(
+  int_ref var_data "calceval.ml" 137 5200 5211 "calceval.ml" 137 5200 5219
+)
+"calceval.ml" 139 5279 5295 "calceval.ml" 139 5279 5296
+type(
+  data_t.Closure
+)
+ident(
+  def c "calceval.ml" 140 5439 5447 "calceval.ml" 141 5596 5632
+)
+"calceval.ml" 139 5279 5287 "calceval.ml" 139 5279 5296
+type(
+  data_t
+)
+"calceval.ml" 140 5439 5447 "calceval.ml" 140 5439 5448
+type(
+  data_t.Closure
+)
+ident(
+  int_ref c "calceval.ml" 139 5279 5295 "calceval.ml" 139 5279 5296
+)
+"calceval.ml" 140 5439 5459 "calceval.ml" 140 5439 5469
+type(
+  Varmap.key -> data_t -> data_t Varmap.t -> data_t Varmap.t
+)
+ident(
+  int_ref Varmap.add "map.mli" 80 3090 3094 "map.mli" 80 3090 3128
+)
+"calceval.ml" 140 5439 5470 "calceval.ml" 140 5439 5471
+type(
+  Calcparse.expr.Letin
+)
+ident(
+  int_ref l "calceval.ml" 135 5095 5104 "calceval.ml" 135 5095 5107
+)
+"calceval.ml" 140 5439 5470 "calceval.ml" 140 5439 5480
+type(
+  Varmap.key
+)
+"calceval.ml" 140 5439 5481 "calceval.ml" 140 5439 5489
+type(
+  data_t
+)
+ident(
+  int_ref var_data "calceval.ml" 137 5200 5211 "calceval.ml" 137 5200 5219
+)
+"calceval.ml" 140 5439 5490 "calceval.ml" 140 5439 5491
+type(
+  data_t.Closure
+)
+ident(
+  int_ref c "calceval.ml" 139 5279 5295 "calceval.ml" 139 5279 5296
+)
+"calceval.ml" 140 5439 5490 "calceval.ml" 140 5439 5498
+type(
+  varmap_t
+)
+"calceval.ml" 140 5439 5459 "calceval.ml" 140 5439 5498
+call(
+  stack
+)
+type(
+  data_t Varmap.t
+)
+"calceval.ml" 140 5439 5447 "calceval.ml" 140 5439 5498
+type(
+  unit
+)
+"calceval.ml" 141 5596 5604 "calceval.ml" 141 5596 5613
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 141 5596 5614 "calceval.ml" 141 5596 5615
+type(
+  data_t.Closure
+)
+ident(
+  int_ref c "calceval.ml" 139 5279 5295 "calceval.ml" 139 5279 5296
+)
+"calceval.ml" 141 5596 5614 "calceval.ml" 141 5596 5622
+type(
+  varmap_t
+)
+"calceval.ml" 141 5596 5623 "calceval.ml" 141 5596 5624
+type(
+  Calcparse.expr.Letin
+)
+ident(
+  int_ref l "calceval.ml" 135 5095 5104 "calceval.ml" 135 5095 5107
+)
+"calceval.ml" 141 5596 5623 "calceval.ml" 141 5596 5632
+type(
+  Calcparse.expr
+)
+"calceval.ml" 141 5596 5604 "calceval.ml" 141 5596 5632
+call(
+  tail
+)
+type(
+  data_t
+)
+"calceval.ml" 140 5439 5447 "calceval.ml" 141 5596 5632
+type(
+  data_t
+)
+"calceval.ml" 142 5717 5725 "calceval.ml" 142 5717 5726
+type(
+  data_t
+)
+"calceval.ml" 142 5717 5734 "calceval.ml" 142 5717 5744
+type(
+  data_t Varmap.t
+)
+ident(
+  def new_varmap "calceval.ml" 143 5832 5838 "calceval.ml" 143 5832 5868
+)
+"calceval.ml" 142 5717 5747 "calceval.ml" 142 5717 5757
+type(
+  Varmap.key -> data_t -> data_t Varmap.t -> data_t Varmap.t
+)
+ident(
+  int_ref Varmap.add "map.mli" 80 3090 3094 "map.mli" 80 3090 3128
+)
+"calceval.ml" 142 5717 5758 "calceval.ml" 142 5717 5759
+type(
+  Calcparse.expr.Letin
+)
+ident(
+  int_ref l "calceval.ml" 135 5095 5104 "calceval.ml" 135 5095 5107
+)
+"calceval.ml" 142 5717 5758 "calceval.ml" 142 5717 5768
+type(
+  Varmap.key
+)
+"calceval.ml" 142 5717 5769 "calceval.ml" 142 5717 5777
+type(
+  data_t
+)
+ident(
+  int_ref var_data "calceval.ml" 137 5200 5211 "calceval.ml" 137 5200 5219
+)
+"calceval.ml" 142 5717 5778 "calceval.ml" 142 5717 5784
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 142 5717 5747 "calceval.ml" 142 5717 5784
+call(
+  stack
+)
+type(
+  data_t Varmap.t
+)
+"calceval.ml" 143 5832 5838 "calceval.ml" 143 5832 5847
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 143 5832 5848 "calceval.ml" 143 5832 5858
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref new_varmap "calceval.ml" 142 5717 5734 "calceval.ml" 142 5717 5744
+)
+"calceval.ml" 143 5832 5859 "calceval.ml" 143 5832 5860
+type(
+  Calcparse.expr.Letin
+)
+ident(
+  int_ref l "calceval.ml" 135 5095 5104 "calceval.ml" 135 5095 5107
+)
+"calceval.ml" 143 5832 5859 "calceval.ml" 143 5832 5868
+type(
+  Calcparse.expr
+)
+"calceval.ml" 143 5832 5838 "calceval.ml" 143 5832 5868
+call(
+  tail
+)
+type(
+  data_t
+)
+"calceval.ml" 142 5717 5730 "calceval.ml" 143 5832 5868
+type(
+  data_t
+)
+"calceval.ml" 138 5253 5259 "calceval.ml" 143 5832 5868
+type(
+  data_t
+)
+"calceval.ml" 136 5189 5194 "calceval.ml" 145 5870 5878
+type(
+  data_t
+)
+"calceval.ml" 147 5880 5891 "calceval.ml" 147 5880 5892
+ident(
+  def l "calceval.ml" 148 5974 5979 "calceval.ml" 151 6298 6306
+)
+"calceval.ml" 147 5880 5890 "calceval.ml" 147 5880 5893
+type(
+  Calcparse.expr.Lambda
+)
+"calceval.ml" 147 5880 5884 "calceval.ml" 147 5880 5893
+type(
+  Calcparse.expr
+)
+"calceval.ml" 149 6079 6090 "calceval.ml" 149 6079 6098
+type(
+  data_t
+)
+ident(
+  def nclosure "calceval.ml" 150 6202 6209 "calceval.ml" 150 6202 6217
+)
+"calceval.ml" 149 6079 6122 "calceval.ml" 149 6079 6123
+type(
+  Calcparse.expr.Lambda
+)
+ident(
+  int_ref l "calceval.ml" 147 5880 5890 "calceval.ml" 147 5880 5893
+)
+"calceval.ml" 149 6079 6122 "calceval.ml" 149 6079 6134
+type(
+  string
+)
+"calceval.ml" 149 6079 6148 "calceval.ml" 149 6079 6149
+type(
+  Calcparse.expr.Lambda
+)
+ident(
+  int_ref l "calceval.ml" 147 5880 5890 "calceval.ml" 147 5880 5893
+)
+"calceval.ml" 149 6079 6148 "calceval.ml" 149 6079 6159
+type(
+  Calcparse.expr
+)
+"calceval.ml" 149 6079 6170 "calceval.ml" 149 6079 6176
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 149 6079 6108 "calceval.ml" 149 6079 6177
+type(
+  data_t.Closure
+)
+"calceval.ml" 149 6079 6101 "calceval.ml" 149 6079 6177
+type(
+  data_t
+)
+"calceval.ml" 150 6202 6209 "calceval.ml" 150 6202 6217
+type(
+  data_t
+)
+ident(
+  int_ref nclosure "calceval.ml" 149 6079 6090 "calceval.ml" 149 6079 6098
+)
+"calceval.ml" 148 5974 5979 "calceval.ml" 151 6298 6306
+type(
+  data_t
+)
+"calceval.ml" 153 6308 6318 "calceval.ml" 153 6308 6323
+ident(
+  def apply "calceval.ml" 154 6404 6409 "calceval.ml" 167 7402 7410
+)
+"calceval.ml" 153 6308 6317 "calceval.ml" 153 6308 6324
+type(
+  Calcparse.expr.Apply
+)
+"calceval.ml" 153 6308 6312 "calceval.ml" 153 6308 6324
+type(
+  Calcparse.expr
+)
+"calceval.ml" 155 6529 6540 "calceval.ml" 155 6529 6546
+type(
+  data_t
+)
+ident(
+  def fun_ex "calceval.ml" 156 6585 6592 "calceval.ml" 166 7360 7401
+)
+"calceval.ml" 155 6529 6549 "calceval.ml" 155 6529 6558
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 155 6529 6559 "calceval.ml" 155 6529 6565
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 155 6529 6566 "calceval.ml" 155 6529 6571
+type(
+  Calcparse.expr.Apply
+)
+ident(
+  int_ref apply "calceval.ml" 153 6308 6317 "calceval.ml" 153 6308 6324
+)
+"calceval.ml" 155 6529 6566 "calceval.ml" 155 6529 6581
+type(
+  Calcparse.expr
+)
+"calceval.ml" 155 6529 6549 "calceval.ml" 155 6529 6581
+call(
+  stack
+)
+type(
+  data_t
+)
+"calceval.ml" 156 6585 6598 "calceval.ml" 156 6585 6604
+type(
+  data_t
+)
+ident(
+  int_ref fun_ex "calceval.ml" 155 6529 6540 "calceval.ml" 155 6529 6546
+)
+"calceval.ml" 157 6610 6627 "calceval.ml" 157 6610 6628
+type(
+  data_t.Closure
+)
+ident(
+  def c "calceval.ml" 158 6721 6729 "calceval.ml" 164 7176 7187
+)
+"calceval.ml" 157 6610 6619 "calceval.ml" 157 6610 6628
+type(
+  data_t
+)
+"calceval.ml" 159 6735 6749 "calceval.ml" 159 6735 6757
+type(
+  data_t
+)
+ident(
+  def param_ex "calceval.ml" 160 6843 6853 "calceval.ml" 163 7136 7175
+)
+"calceval.ml" 159 6735 6760 "calceval.ml" 159 6735 6769
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 159 6735 6770 "calceval.ml" 159 6735 6776
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 159 6735 6777 "calceval.ml" 159 6735 6782
+type(
+  Calcparse.expr.Apply
+)
+ident(
+  int_ref apply "calceval.ml" 153 6308 6317 "calceval.ml" 153 6308 6324
+)
+"calceval.ml" 159 6735 6777 "calceval.ml" 159 6735 6793
+type(
+  Calcparse.expr
+)
+"calceval.ml" 159 6735 6760 "calceval.ml" 159 6735 6793
+call(
+  stack
+)
+type(
+  data_t
+)
+"calceval.ml" 160 6843 6857 "calceval.ml" 160 6843 6864
+type(
+  data_t Varmap.t
+)
+ident(
+  def new_map "calceval.ml" 161 6979 6989 "calceval.ml" 163 7136 7175
+)
+"calceval.ml" 160 6843 6867 "calceval.ml" 160 6843 6877
+type(
+  Varmap.key -> data_t -> data_t Varmap.t -> data_t Varmap.t
+)
+ident(
+  int_ref Varmap.add "map.mli" 80 3090 3094 "map.mli" 80 3090 3128
+)
+"calceval.ml" 160 6843 6878 "calceval.ml" 160 6843 6879
+type(
+  data_t.Closure
+)
+ident(
+  int_ref c "calceval.ml" 157 6610 6627 "calceval.ml" 157 6610 6628
+)
+"calceval.ml" 160 6843 6878 "calceval.ml" 160 6843 6890
+type(
+  Varmap.key
+)
+"calceval.ml" 160 6843 6891 "calceval.ml" 160 6843 6899
+type(
+  data_t
+)
+ident(
+  int_ref param_ex "calceval.ml" 159 6735 6749 "calceval.ml" 159 6735 6757
+)
+"calceval.ml" 160 6843 6900 "calceval.ml" 160 6843 6901
+type(
+  data_t.Closure
+)
+ident(
+  int_ref c "calceval.ml" 157 6610 6627 "calceval.ml" 157 6610 6628
+)
+"calceval.ml" 160 6843 6900 "calceval.ml" 160 6843 6908
+type(
+  varmap_t
+)
+"calceval.ml" 160 6843 6867 "calceval.ml" 160 6843 6908
+call(
+  stack
+)
+type(
+  data_t Varmap.t
+)
+"calceval.ml" 161 6979 6997 "calceval.ml" 161 6979 7003
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  def helper "calceval.ml" 161 6979 6989 "calceval.ml" 163 7136 7175
+)
+"calceval.ml" 161 6979 7004 "calceval.ml" 161 6979 7007
+type(
+  data_t Varmap.t
+)
+ident(
+  def map "calceval.ml" 161 6979 7008 "calceval.ml" 162 7105 7135
+)
+"calceval.ml" 161 6979 7008 "calceval.ml" 161 6979 7012
+type(
+  Calcparse.expr
+)
+ident(
+  def code "calceval.ml" 162 7105 7117 "calceval.ml" 162 7105 7135
+)
+"calceval.ml" 162 7105 7117 "calceval.ml" 162 7105 7126
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref eval_expr "calceval.ml" 76 2473 2481 "calceval.ml" 76 2473 2490
+)
+"calceval.ml" 162 7105 7127 "calceval.ml" 162 7105 7130
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref map "calceval.ml" 161 6979 7004 "calceval.ml" 161 6979 7007
+)
+"calceval.ml" 162 7105 7131 "calceval.ml" 162 7105 7135
+type(
+  Calcparse.expr
+)
+ident(
+  int_ref code "calceval.ml" 161 6979 7008 "calceval.ml" 161 6979 7012
+)
+"calceval.ml" 162 7105 7117 "calceval.ml" 162 7105 7135
+call(
+  tail
+)
+type(
+  data_t
+)
+"calceval.ml" 163 7136 7149 "calceval.ml" 163 7136 7155
+type(
+  data_t Varmap.t -> Calcparse.expr -> data_t
+)
+ident(
+  int_ref helper "calceval.ml" 161 6979 6997 "calceval.ml" 161 6979 7003
+)
+"calceval.ml" 163 7136 7156 "calceval.ml" 163 7136 7163
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref new_map "calceval.ml" 160 6843 6857 "calceval.ml" 160 6843 6864
+)
+"calceval.ml" 163 7136 7164 "calceval.ml" 163 7136 7165
+type(
+  data_t.Closure
+)
+ident(
+  int_ref c "calceval.ml" 157 6610 6627 "calceval.ml" 157 6610 6628
+)
+"calceval.ml" 163 7136 7164 "calceval.ml" 163 7136 7175
+type(
+  Calcparse.expr
+)
+"calceval.ml" 163 7136 7149 "calceval.ml" 163 7136 7175
+call(
+  tail
+)
+type(
+  data_t
+)
+"calceval.ml" 161 6979 6989 "calceval.ml" 163 7136 7175
+type(
+  data_t
+)
+"calceval.ml" 160 6843 6853 "calceval.ml" 163 7136 7175
+type(
+  data_t
+)
+"calceval.ml" 158 6721 6729 "calceval.ml" 164 7176 7187
+type(
+  data_t
+)
+"calceval.ml" 165 7188 7197 "calceval.ml" 165 7188 7198
+type(
+  data_t
+)
+"calceval.ml" 165 7188 7206 "calceval.ml" 165 7188 7209
+type(
+  string
+)
+ident(
+  def msg "calceval.ml" 166 7360 7367 "calceval.ml" 166 7360 7401
+)
+"calceval.ml" 165 7188 7212 "calceval.ml" 165 7188 7219
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  int_ref Printf.sprintf "printf.mli" 129 6682 6682 "printf.mli" 129 6682 6727
+)
+"calceval.ml" 165 7188 7220 "calceval.ml" 165 7188 7266
+type(
+  (string -> string, unit, string) format
+)
+"calceval.ml" 165 7188 7268 "calceval.ml" 165 7188 7279
+type(
+  data_t -> string
+)
+ident(
+  int_ref data_string "calceval.ml" 25 687 695 "calceval.ml" 25 687 706
+)
+"calceval.ml" 165 7188 7280 "calceval.ml" 165 7188 7286
+type(
+  data_t
+)
+ident(
+  int_ref fun_ex "calceval.ml" 155 6529 6540 "calceval.ml" 155 6529 6546
+)
+"calceval.ml" 165 7188 7267 "calceval.ml" 165 7188 7287
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 165 7188 7212 "calceval.ml" 165 7188 7287
+call(
+  stack
+)
+type(
+  string
+)
+"calceval.ml" 166 7360 7367 "calceval.ml" 166 7360 7372
+type(
+  exn -> data_t
+)
+ident(
+  int_ref Pervasives.raise "pervasives.mli" 30 1530 1530 "pervasives.mli" 30 1530 1567
+)
+"calceval.ml" 166 7360 7374 "calceval.ml" 166 7360 7384
+type(
+  string -> varmap_t -> Calcparse.expr -> exn
+)
+ident(
+  int_ref eval_error "calceval.ml" 67 2112 2116 "calceval.ml" 67 2112 2126
+)
+"calceval.ml" 166 7360 7385 "calceval.ml" 166 7360 7388
+type(
+  string
+)
+ident(
+  int_ref msg "calceval.ml" 165 7188 7206 "calceval.ml" 165 7188 7209
+)
+"calceval.ml" 166 7360 7389 "calceval.ml" 166 7360 7395
+type(
+  data_t Varmap.t
+)
+ident(
+  int_ref varmap "calceval.ml" 76 2473 2491 "calceval.ml" 76 2473 2497
+)
+"calceval.ml" 166 7360 7396 "calceval.ml" 166 7360 7400
+type(
+  Calcparse.expr
+)
+ident(
+  int_ref expr "calceval.ml" 76 2473 2498 "calceval.ml" 76 2473 2502
+)
+"calceval.ml" 166 7360 7373 "calceval.ml" 166 7360 7401
+call(
+  stack
+)
+type(
+  exn
+)
+"calceval.ml" 166 7360 7367 "calceval.ml" 166 7360 7401
+type(
+  data_t
+)
+"calceval.ml" 165 7188 7202 "calceval.ml" 166 7360 7401
+type(
+  data_t
+)
+"calceval.ml" 156 6585 6592 "calceval.ml" 166 7360 7401
+type(
+  data_t
+)
+"calceval.ml" 154 6404 6409 "calceval.ml" 167 7402 7410
+type(
+  data_t
+)
+"calceval.ml" 77 2505 2507 "calceval.ml" 167 7402 7410
+type(
+  data_t
+)
+"calceval.ml" 196 8169 8177 "calceval.ml" 196 8169 8190
+type(
+  'a -> 'b -> 'c
+)
+ident(
+  def optimize_expr "calceval.ml" 196 8169 8169 "calceval.ml" 1 0 -1
+)
+"calceval.ml" 196 8169 8191 "calceval.ml" 196 8169 8197
+type(
+  'a
+)
+ident(
+  def varmap "calceval.ml" 196 8169 8198 "calceval.ml" 198 8267 8323
+)
+"calceval.ml" 196 8169 8198 "calceval.ml" 196 8169 8202
+type(
+  'b
+)
+ident(
+  def expr "calceval.ml" 198 8267 8269 "calceval.ml" 198 8267 8323
+)
+"calceval.ml" 198 8267 8269 "calceval.ml" 198 8267 8277
+type(
+  string -> 'c
+)
+ident(
+  int_ref Pervasives.failwith "pervasives.mli" 41 1847 1847 "pervasives.mli" 41 1847 1874
+)
+"calceval.ml" 198 8267 8278 "calceval.ml" 198 8267 8323
+type(
+  string
+)
+"calceval.ml" 198 8267 8269 "calceval.ml" 198 8267 8323
+call(
+  tail
+)
+type(
+  'c
+)
